@@ -1,0 +1,1477 @@
+<?xml version='1.0' encoding='utf-8' ?>
+
+<!-- build 20261.26.0410.0924                               -->
+<workbook original-version='18.1' source-build='2026.1.1 (20261.26.0410.0924)' source-platform='win' version='18.1' xmlns:user='http://www.tableausoftware.com/xml/user'>
+  <document-format-change-manifest>
+    <AnimationOnByDefault />
+    <MapboxVectorStylesAndLayers />
+    <MarkAnimation />
+    <ObjectModelEncapsulateLegacy />
+    <ObjectModelExtractV2 />
+    <ObjectModelTableType />
+    <SchemaViewerObjectModel />
+    <SheetIdentifierTracking />
+    <_.fcp.VConnDownstreamExtractsWithWarnings.true...VConnDownstreamExtractsWithWarnings />
+    <WindowsPersistSimpleIdentifiers />
+  </document-format-change-manifest>
+  <preferences>
+    <preference name='ui.encoding.shelf.height' value='24' />
+    <preference name='ui.shelf.height' value='26' />
+  </preferences>
+  <datasources>
+    <datasource caption='DATASET (DATASET)' inline='true' name='federated.0bzyhoh1m3im9812yuz7b0z7jr3d' version='18.1'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='DATASET' name='excel-direct.15nyoid0bd1ghw1gzohy21r97p1o'>
+            <connection class='excel-direct' cleaning='no' compat='no' dataRefreshTime='' filename='E:/FAKS/4. LJETNI/SKLADISTA SPPI/jp_projekt/Analiza Counter Strike natjecanja/DATASET.xls' interpretationMode='0' password='' server='' validate='no' />
+          </named-connection>
+        </named-connections>
+        <relation connection='excel-direct.15nyoid0bd1ghw1gzohy21r97p1o' name='DATASET' table='[DATASET$]' type='table'>
+          <columns gridOrigin='A1:AE2801:no:A1:AE2801:0' header='yes' outcome='2'>
+            <column datatype='integer' name='record_id' ordinal='0' />
+            <column datatype='integer' name='player_id' ordinal='1' />
+            <column datatype='string' name='team_name' ordinal='2' />
+            <column datatype='string' name='player_role' ordinal='3' />
+            <column datatype='string' name='map_played' ordinal='4' />
+            <column datatype='string' name='match_type' ordinal='5' />
+            <column datatype='integer' name='kills' ordinal='6' />
+            <column datatype='integer' name='assists' ordinal='7' />
+            <column datatype='integer' name='deaths' ordinal='8' />
+            <column datatype='real' name='accuracy_percent' ordinal='9' />
+            <column datatype='real' name='reaction_time_ms' ordinal='10' />
+            <column datatype='real' name='fatigue_index' ordinal='11' />
+            <column datatype='real' name='performance_score' ordinal='12' />
+            <column datatype='real' name='win_probability' ordinal='13' />
+            <column datatype='string' name='match_outcome' ordinal='14' />
+            <column datatype='string' name='mvp_award' ordinal='15' />
+            <column datatype='string' name='player_name' ordinal='16' />
+            <column datatype='string' name='player_country' ordinal='17' />
+            <column datatype='real' name='kd' ordinal='18' />
+            <column datatype='real' name='rating' ordinal='19' />
+            <column datatype='integer' name='team_id' ordinal='20' />
+            <column datatype='integer' name='map_id' ordinal='21' />
+            <column datatype='integer' name='match_type_id' ordinal='22' />
+            <column datatype='string' name='map_type' ordinal='23' />
+            <column datatype='integer' name='active_duty' ordinal='24' />
+            <column datatype='integer' name='best_of' ordinal='25' />
+            <column datatype='string' name='match_date' ordinal='26' />
+            <column datatype='integer' name='date_year' ordinal='27' />
+            <column datatype='integer' name='date_month' ordinal='28' />
+            <column datatype='integer' name='date_quarter' ordinal='29' />
+            <column datatype='string' name='date_day_of_week' ordinal='30' />
+          </columns>
+        </relation>
+        <metadata-records>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[DATASET]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='context'>0</attribute>
+              <attribute datatype='string' name='gridOrigin'>&quot;A1:AE2801:no:A1:AE2801:0&quot;</attribute>
+              <attribute datatype='boolean' name='header'>true</attribute>
+              <attribute datatype='integer' name='outcome'>2</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>record_id</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[record_id]</local-name>
+            <parent-name>[DATASET]</parent-name>
+            <remote-alias>record_id</remote-alias>
+            <ordinal>0</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+            <object-id>[DATASET_23F103DC128A4E5AAE0588C2FD11E484]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>player_id</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[player_id]</local-name>
+            <parent-name>[DATASET]</parent-name>
+            <remote-alias>player_id</remote-alias>
+            <ordinal>1</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+            <object-id>[DATASET_23F103DC128A4E5AAE0588C2FD11E484]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>team_name</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[team_name]</local-name>
+            <parent-name>[DATASET]</parent-name>
+            <remote-alias>team_name</remote-alias>
+            <ordinal>2</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LHR_RHR_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+            <object-id>[DATASET_23F103DC128A4E5AAE0588C2FD11E484]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>player_role</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[player_role]</local-name>
+            <parent-name>[DATASET]</parent-name>
+            <remote-alias>player_role</remote-alias>
+            <ordinal>3</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LHR_RHR_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+            <object-id>[DATASET_23F103DC128A4E5AAE0588C2FD11E484]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>map_played</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[map_played]</local-name>
+            <parent-name>[DATASET]</parent-name>
+            <remote-alias>map_played</remote-alias>
+            <ordinal>4</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LHR_RHR_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+            <object-id>[DATASET_23F103DC128A4E5AAE0588C2FD11E484]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>match_type</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[match_type]</local-name>
+            <parent-name>[DATASET]</parent-name>
+            <remote-alias>match_type</remote-alias>
+            <ordinal>5</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LHR_RHR_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+            <object-id>[DATASET_23F103DC128A4E5AAE0588C2FD11E484]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>kills</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[kills]</local-name>
+            <parent-name>[DATASET]</parent-name>
+            <remote-alias>kills</remote-alias>
+            <ordinal>6</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+            <object-id>[DATASET_23F103DC128A4E5AAE0588C2FD11E484]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>assists</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[assists]</local-name>
+            <parent-name>[DATASET]</parent-name>
+            <remote-alias>assists</remote-alias>
+            <ordinal>7</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+            <object-id>[DATASET_23F103DC128A4E5AAE0588C2FD11E484]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>deaths</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[deaths]</local-name>
+            <parent-name>[DATASET]</parent-name>
+            <remote-alias>deaths</remote-alias>
+            <ordinal>8</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+            <object-id>[DATASET_23F103DC128A4E5AAE0588C2FD11E484]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>accuracy_percent</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[accuracy_percent]</local-name>
+            <parent-name>[DATASET]</parent-name>
+            <remote-alias>accuracy_percent</remote-alias>
+            <ordinal>9</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>15</precision>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;R8&quot;</attribute>
+            </attributes>
+            <object-id>[DATASET_23F103DC128A4E5AAE0588C2FD11E484]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>reaction_time_ms</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[reaction_time_ms]</local-name>
+            <parent-name>[DATASET]</parent-name>
+            <remote-alias>reaction_time_ms</remote-alias>
+            <ordinal>10</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>15</precision>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;R8&quot;</attribute>
+            </attributes>
+            <object-id>[DATASET_23F103DC128A4E5AAE0588C2FD11E484]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>fatigue_index</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[fatigue_index]</local-name>
+            <parent-name>[DATASET]</parent-name>
+            <remote-alias>fatigue_index</remote-alias>
+            <ordinal>11</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>15</precision>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;R8&quot;</attribute>
+            </attributes>
+            <object-id>[DATASET_23F103DC128A4E5AAE0588C2FD11E484]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>performance_score</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[performance_score]</local-name>
+            <parent-name>[DATASET]</parent-name>
+            <remote-alias>performance_score</remote-alias>
+            <ordinal>12</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>15</precision>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;R8&quot;</attribute>
+            </attributes>
+            <object-id>[DATASET_23F103DC128A4E5AAE0588C2FD11E484]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>win_probability</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[win_probability]</local-name>
+            <parent-name>[DATASET]</parent-name>
+            <remote-alias>win_probability</remote-alias>
+            <ordinal>13</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>15</precision>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;R8&quot;</attribute>
+            </attributes>
+            <object-id>[DATASET_23F103DC128A4E5AAE0588C2FD11E484]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>match_outcome</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[match_outcome]</local-name>
+            <parent-name>[DATASET]</parent-name>
+            <remote-alias>match_outcome</remote-alias>
+            <ordinal>14</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LHR_RHR_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+            <object-id>[DATASET_23F103DC128A4E5AAE0588C2FD11E484]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>mvp_award</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[mvp_award]</local-name>
+            <parent-name>[DATASET]</parent-name>
+            <remote-alias>mvp_award</remote-alias>
+            <ordinal>15</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LHR_RHR_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+            <object-id>[DATASET_23F103DC128A4E5AAE0588C2FD11E484]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>player_name</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[player_name]</local-name>
+            <parent-name>[DATASET]</parent-name>
+            <remote-alias>player_name</remote-alias>
+            <ordinal>16</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LHR_RHR_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+            <object-id>[DATASET_23F103DC128A4E5AAE0588C2FD11E484]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>player_country</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[player_country]</local-name>
+            <parent-name>[DATASET]</parent-name>
+            <remote-alias>player_country</remote-alias>
+            <ordinal>17</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LHR_RHR_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+            <object-id>[DATASET_23F103DC128A4E5AAE0588C2FD11E484]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>kd</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[kd]</local-name>
+            <parent-name>[DATASET]</parent-name>
+            <remote-alias>kd</remote-alias>
+            <ordinal>18</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>15</precision>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;R8&quot;</attribute>
+            </attributes>
+            <object-id>[DATASET_23F103DC128A4E5AAE0588C2FD11E484]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>rating</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[rating]</local-name>
+            <parent-name>[DATASET]</parent-name>
+            <remote-alias>rating</remote-alias>
+            <ordinal>19</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>15</precision>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;R8&quot;</attribute>
+            </attributes>
+            <object-id>[DATASET_23F103DC128A4E5AAE0588C2FD11E484]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>team_id</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[team_id]</local-name>
+            <parent-name>[DATASET]</parent-name>
+            <remote-alias>team_id</remote-alias>
+            <ordinal>20</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+            <object-id>[DATASET_23F103DC128A4E5AAE0588C2FD11E484]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>map_id</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[map_id]</local-name>
+            <parent-name>[DATASET]</parent-name>
+            <remote-alias>map_id</remote-alias>
+            <ordinal>21</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+            <object-id>[DATASET_23F103DC128A4E5AAE0588C2FD11E484]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>match_type_id</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[match_type_id]</local-name>
+            <parent-name>[DATASET]</parent-name>
+            <remote-alias>match_type_id</remote-alias>
+            <ordinal>22</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+            <object-id>[DATASET_23F103DC128A4E5AAE0588C2FD11E484]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>map_type</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[map_type]</local-name>
+            <parent-name>[DATASET]</parent-name>
+            <remote-alias>map_type</remote-alias>
+            <ordinal>23</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LHR_RHR_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+            <object-id>[DATASET_23F103DC128A4E5AAE0588C2FD11E484]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>active_duty</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[active_duty]</local-name>
+            <parent-name>[DATASET]</parent-name>
+            <remote-alias>active_duty</remote-alias>
+            <ordinal>24</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+            <object-id>[DATASET_23F103DC128A4E5AAE0588C2FD11E484]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>best_of</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[best_of]</local-name>
+            <parent-name>[DATASET]</parent-name>
+            <remote-alias>best_of</remote-alias>
+            <ordinal>25</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+            <object-id>[DATASET_23F103DC128A4E5AAE0588C2FD11E484]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>match_date</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[match_date]</local-name>
+            <parent-name>[DATASET]</parent-name>
+            <remote-alias>match_date</remote-alias>
+            <ordinal>26</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LHR_RHR_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+            <object-id>[DATASET_23F103DC128A4E5AAE0588C2FD11E484]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>date_year</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[date_year]</local-name>
+            <parent-name>[DATASET]</parent-name>
+            <remote-alias>date_year</remote-alias>
+            <ordinal>27</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+            <object-id>[DATASET_23F103DC128A4E5AAE0588C2FD11E484]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>date_month</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[date_month]</local-name>
+            <parent-name>[DATASET]</parent-name>
+            <remote-alias>date_month</remote-alias>
+            <ordinal>28</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+            <object-id>[DATASET_23F103DC128A4E5AAE0588C2FD11E484]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>date_quarter</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[date_quarter]</local-name>
+            <parent-name>[DATASET]</parent-name>
+            <remote-alias>date_quarter</remote-alias>
+            <ordinal>29</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+            <object-id>[DATASET_23F103DC128A4E5AAE0588C2FD11E484]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>date_day_of_week</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[date_day_of_week]</local-name>
+            <parent-name>[DATASET]</parent-name>
+            <remote-alias>date_day_of_week</remote-alias>
+            <ordinal>30</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LHR_RHR_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+            <object-id>[DATASET_23F103DC128A4E5AAE0588C2FD11E484]</object-id>
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <aliases enabled='yes' />
+      <column caption='DATASET' datatype='table' name='[__tableau_internal_object_id__].[DATASET_23F103DC128A4E5AAE0588C2FD11E484]' role='measure' type='quantitative' />
+      <column datatype='integer' name='[date_month]' role='dimension' type='quantitative' />
+      <column datatype='integer' name='[date_quarter]' role='dimension' type='quantitative' />
+      <column datatype='integer' name='[date_year]' role='dimension' type='quantitative' />
+      <column datatype='integer' name='[map_id]' role='dimension' type='ordinal' />
+      <column datatype='integer' name='[match_type_id]' role='dimension' type='ordinal' />
+      <column datatype='string' name='[player_country]' role='dimension' semantic-role='[Country].[ISO3166_2]' type='nominal' />
+      <column datatype='integer' name='[player_id]' role='dimension' type='ordinal' />
+      <column datatype='integer' name='[record_id]' role='dimension' type='ordinal' />
+      <column datatype='integer' name='[team_id]' role='dimension' type='ordinal' />
+      <extract _.fcp.VConnDownstreamExtractsWithWarnings.true...user-specific='false' count='-1' enabled='true' object-id='' units='records'>
+        <connection access_mode='readonly' author-locale='en_GB' class='hyper' dbname='C:/Users/JANPOB~1/AppData/Local/Temp/TableauTemp/#TableauTemp_0xfhhkj0yo0k4v17lqmsk0iix9w7.hyper' default-settings='hyper' schema='Extract' sslmode='' tablename='Extract' update-time='05/13/2026 02:43:06 PM' username='tableau_internal_user'>
+          <relation name='Extract' table='[Extract].[Extract]' type='table' />
+          <metadata-records>
+            <metadata-record class='column'>
+              <remote-name>record_id</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[record_id]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>record_id</remote-alias>
+              <ordinal>0</ordinal>
+              <family>DATASET</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>2800</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[DATASET_23F103DC128A4E5AAE0588C2FD11E484]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>player_id</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[player_id]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>player_id</remote-alias>
+              <ordinal>1</ordinal>
+              <family>DATASET</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>502</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[DATASET_23F103DC128A4E5AAE0588C2FD11E484]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>team_name</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[team_name]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>team_name</remote-alias>
+              <ordinal>2</ordinal>
+              <family>DATASET</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>260</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='binary' />
+              <object-id>[DATASET_23F103DC128A4E5AAE0588C2FD11E484]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>player_role</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[player_role]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>player_role</remote-alias>
+              <ordinal>3</ordinal>
+              <family>DATASET</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>4</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='binary' />
+              <object-id>[DATASET_23F103DC128A4E5AAE0588C2FD11E484]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>map_played</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[map_played]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>map_played</remote-alias>
+              <ordinal>4</ordinal>
+              <family>DATASET</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>5</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='binary' />
+              <object-id>[DATASET_23F103DC128A4E5AAE0588C2FD11E484]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>match_type</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[match_type]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>match_type</remote-alias>
+              <ordinal>5</ordinal>
+              <family>DATASET</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>5</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='binary' />
+              <object-id>[DATASET_23F103DC128A4E5AAE0588C2FD11E484]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>kills</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[kills]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>kills</remote-alias>
+              <ordinal>6</ordinal>
+              <family>DATASET</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>27</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[DATASET_23F103DC128A4E5AAE0588C2FD11E484]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>assists</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[assists]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>assists</remote-alias>
+              <ordinal>7</ordinal>
+              <family>DATASET</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>20</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[DATASET_23F103DC128A4E5AAE0588C2FD11E484]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>deaths</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[deaths]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>deaths</remote-alias>
+              <ordinal>8</ordinal>
+              <family>DATASET</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>21</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[DATASET_23F103DC128A4E5AAE0588C2FD11E484]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>accuracy_percent</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[accuracy_percent]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>accuracy_percent</remote-alias>
+              <ordinal>9</ordinal>
+              <family>DATASET</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>1397</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[DATASET_23F103DC128A4E5AAE0588C2FD11E484]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>reaction_time_ms</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[reaction_time_ms]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>reaction_time_ms</remote-alias>
+              <ordinal>10</ordinal>
+              <family>DATASET</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>1781</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[DATASET_23F103DC128A4E5AAE0588C2FD11E484]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>fatigue_index</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[fatigue_index]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>fatigue_index</remote-alias>
+              <ordinal>11</ordinal>
+              <family>DATASET</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>101</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[DATASET_23F103DC128A4E5AAE0588C2FD11E484]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>performance_score</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[performance_score]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>performance_score</remote-alias>
+              <ordinal>12</ordinal>
+              <family>DATASET</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>1515</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[DATASET_23F103DC128A4E5AAE0588C2FD11E484]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>win_probability</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[win_probability]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>win_probability</remote-alias>
+              <ordinal>13</ordinal>
+              <family>DATASET</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>45</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[DATASET_23F103DC128A4E5AAE0588C2FD11E484]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>match_outcome</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[match_outcome]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>match_outcome</remote-alias>
+              <ordinal>14</ordinal>
+              <family>DATASET</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>2</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='binary' />
+              <object-id>[DATASET_23F103DC128A4E5AAE0588C2FD11E484]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>mvp_award</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[mvp_award]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>mvp_award</remote-alias>
+              <ordinal>15</ordinal>
+              <family>DATASET</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>2</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='binary' />
+              <object-id>[DATASET_23F103DC128A4E5AAE0588C2FD11E484]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>player_name</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[player_name]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>player_name</remote-alias>
+              <ordinal>16</ordinal>
+              <family>DATASET</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>500</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='binary' />
+              <object-id>[DATASET_23F103DC128A4E5AAE0588C2FD11E484]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>player_country</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[player_country]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>player_country</remote-alias>
+              <ordinal>17</ordinal>
+              <family>DATASET</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>63</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='binary' />
+              <object-id>[DATASET_23F103DC128A4E5AAE0588C2FD11E484]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>kd</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[kd]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>kd</remote-alias>
+              <ordinal>18</ordinal>
+              <family>DATASET</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>37</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[DATASET_23F103DC128A4E5AAE0588C2FD11E484]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>rating</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[rating]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>rating</remote-alias>
+              <ordinal>19</ordinal>
+              <family>DATASET</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>24</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[DATASET_23F103DC128A4E5AAE0588C2FD11E484]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>team_id</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[team_id]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>team_id</remote-alias>
+              <ordinal>20</ordinal>
+              <family>DATASET</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>6</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[DATASET_23F103DC128A4E5AAE0588C2FD11E484]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>map_id</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[map_id]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>map_id</remote-alias>
+              <ordinal>21</ordinal>
+              <family>DATASET</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>5</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[DATASET_23F103DC128A4E5AAE0588C2FD11E484]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>match_type_id</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[match_type_id]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>match_type_id</remote-alias>
+              <ordinal>22</ordinal>
+              <family>DATASET</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>5</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[DATASET_23F103DC128A4E5AAE0588C2FD11E484]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>map_type</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[map_type]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>map_type</remote-alias>
+              <ordinal>23</ordinal>
+              <family>DATASET</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>1</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='binary' />
+              <object-id>[DATASET_23F103DC128A4E5AAE0588C2FD11E484]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>active_duty</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[active_duty]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>active_duty</remote-alias>
+              <ordinal>24</ordinal>
+              <family>DATASET</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>2</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[DATASET_23F103DC128A4E5AAE0588C2FD11E484]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>best_of</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[best_of]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>best_of</remote-alias>
+              <ordinal>25</ordinal>
+              <family>DATASET</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>3</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[DATASET_23F103DC128A4E5AAE0588C2FD11E484]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>match_date</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[match_date]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>match_date</remote-alias>
+              <ordinal>26</ordinal>
+              <family>DATASET</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>833</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='binary' />
+              <object-id>[DATASET_23F103DC128A4E5AAE0588C2FD11E484]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>date_year</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[date_year]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>date_year</remote-alias>
+              <ordinal>27</ordinal>
+              <family>DATASET</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>3</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[DATASET_23F103DC128A4E5AAE0588C2FD11E484]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>date_month</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[date_month]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>date_month</remote-alias>
+              <ordinal>28</ordinal>
+              <family>DATASET</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>12</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[DATASET_23F103DC128A4E5AAE0588C2FD11E484]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>date_quarter</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[date_quarter]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>date_quarter</remote-alias>
+              <ordinal>29</ordinal>
+              <family>DATASET</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>4</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[DATASET_23F103DC128A4E5AAE0588C2FD11E484]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>date_day_of_week</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[date_day_of_week]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>date_day_of_week</remote-alias>
+              <ordinal>30</ordinal>
+              <family>DATASET</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>7</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='binary' />
+              <object-id>[DATASET_23F103DC128A4E5AAE0588C2FD11E484]</object-id>
+            </metadata-record>
+          </metadata-records>
+        </connection>
+      </extract>
+      <layout dim-ordering='alphabetic' measure-ordering='alphabetic' show-structure='true' />
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;Croatia&quot;' />
+      </semantic-values>
+      <date-options start-of-week='monday' />
+      <object-graph>
+        <objects>
+          <object caption='DATASET' id='DATASET_23F103DC128A4E5AAE0588C2FD11E484'>
+            <properties context=''>
+              <relation connection='excel-direct.15nyoid0bd1ghw1gzohy21r97p1o' name='DATASET' table='[DATASET$]' type='table'>
+                <columns gridOrigin='A1:AE2801:no:A1:AE2801:0' header='yes' outcome='2'>
+                  <column datatype='integer' name='record_id' ordinal='0' />
+                  <column datatype='integer' name='player_id' ordinal='1' />
+                  <column datatype='string' name='team_name' ordinal='2' />
+                  <column datatype='string' name='player_role' ordinal='3' />
+                  <column datatype='string' name='map_played' ordinal='4' />
+                  <column datatype='string' name='match_type' ordinal='5' />
+                  <column datatype='integer' name='kills' ordinal='6' />
+                  <column datatype='integer' name='assists' ordinal='7' />
+                  <column datatype='integer' name='deaths' ordinal='8' />
+                  <column datatype='real' name='accuracy_percent' ordinal='9' />
+                  <column datatype='real' name='reaction_time_ms' ordinal='10' />
+                  <column datatype='real' name='fatigue_index' ordinal='11' />
+                  <column datatype='real' name='performance_score' ordinal='12' />
+                  <column datatype='real' name='win_probability' ordinal='13' />
+                  <column datatype='string' name='match_outcome' ordinal='14' />
+                  <column datatype='string' name='mvp_award' ordinal='15' />
+                  <column datatype='string' name='player_name' ordinal='16' />
+                  <column datatype='string' name='player_country' ordinal='17' />
+                  <column datatype='real' name='kd' ordinal='18' />
+                  <column datatype='real' name='rating' ordinal='19' />
+                  <column datatype='integer' name='team_id' ordinal='20' />
+                  <column datatype='integer' name='map_id' ordinal='21' />
+                  <column datatype='integer' name='match_type_id' ordinal='22' />
+                  <column datatype='string' name='map_type' ordinal='23' />
+                  <column datatype='integer' name='active_duty' ordinal='24' />
+                  <column datatype='integer' name='best_of' ordinal='25' />
+                  <column datatype='string' name='match_date' ordinal='26' />
+                  <column datatype='integer' name='date_year' ordinal='27' />
+                  <column datatype='integer' name='date_month' ordinal='28' />
+                  <column datatype='integer' name='date_quarter' ordinal='29' />
+                  <column datatype='string' name='date_day_of_week' ordinal='30' />
+                </columns>
+              </relation>
+            </properties>
+            <properties context='extract'>
+              <relation name='Extract' table='[Extract].[Extract]' type='table' />
+            </properties>
+          </object>
+        </objects>
+      </object-graph>
+    </datasource>
+  </datasources>
+  <mapsources>
+    <mapsource name='Tableau' />
+  </mapsources>
+  <worksheets>
+    <worksheet name='Sheet 1'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='DATASET (DATASET)' name='federated.0bzyhoh1m3im9812yuz7b0z7jr3d' />
+          </datasources>
+          <mapsources>
+            <mapsource name='Tableau' />
+          </mapsources>
+          <datasource-dependencies datasource='federated.0bzyhoh1m3im9812yuz7b0z7jr3d'>
+            <column-instance column='[player_country]' derivation='None' name='[none:player_country:nk]' pivot='key' type='nominal' />
+            <column datatype='string' name='[player_country]' role='dimension' semantic-role='[Country].[ISO3166_2]' type='nominal' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='axis'>
+            <encoding attr='space' class='0' field='[federated.0bzyhoh1m3im9812yuz7b0z7jr3d].[Longitude (generated)]' field-type='quantitative' max='30986260.05639793' min='-16515447.731984528' projection='EPSG:3857' range-type='fixed' scope='cols' type='space' />
+            <encoding attr='space' class='0' field='[federated.0bzyhoh1m3im9812yuz7b0z7jr3d].[Latitude (generated)]' field-type='quantitative' max='20284053.490741789' min='-6238563.1239953274' projection='EPSG:3857' range-type='fixed' scope='rows' type='space' />
+          </style-rule>
+          <style-rule element='map'>
+            <format attr='washout' value='0.0' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <lod column='[federated.0bzyhoh1m3im9812yuz7b0z7jr3d].[none:player_country:nk]' />
+            </encodings>
+          </pane>
+        </panes>
+        <rows>[federated.0bzyhoh1m3im9812yuz7b0z7jr3d].[Latitude (generated)]</rows>
+        <cols>[federated.0bzyhoh1m3im9812yuz7b0z7jr3d].[Longitude (generated)]</cols>
+      </table>
+      <simple-id uuid='{F15A3BAD-ED9E-41AB-977E-0526F4AA3DEF}' />
+    </worksheet>
+  </worksheets>
+  <windows saved-dpi-scale-factor='1.25' source-height='37'>
+    <window class='worksheet' maximized='true' name='Sheet 1'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{0F9A0DAD-14F6-4B9B-970E-A60BDE65431F}' />
+    </window>
+  </windows>
+  <thumbnails>
+    <thumbnail height='192' name='Sheet 1' width='192'>
+      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
+      bPD/A9TKQQWWEOFmAAAAAElFTkSuQmCC
+    </thumbnail>
+  </thumbnails>
+</workbook>
