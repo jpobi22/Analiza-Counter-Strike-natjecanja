@@ -27,8 +27,8 @@
   <datasources>
     <datasource hasconnection='false' inline='true' name='Parameters' version='18.1'>
       <aliases enabled='yes' />
-      <column caption='Date Granularity' datatype='string' name='[Parameter 1]' param-domain-type='list' role='measure' type='nominal' value='&quot;Year&quot;'>
-        <calculation class='tableau' formula='&quot;Year&quot;' />
+      <column caption='Date Granularity' datatype='string' name='[Parameter 1]' param-domain-type='list' role='measure' type='nominal' value='&quot;Quarter&quot;'>
+        <calculation class='tableau' formula='&quot;Quarter&quot;' />
         <members>
           <member value='&quot;Month&quot;' />
           <member value='&quot;Quarter&quot;' />
@@ -51,11 +51,11 @@
           <named-connection caption='dim_match_type' name='excel-direct.0spwj371x5gr501g6abn10hracxd'>
             <connection class='excel-direct' cleaning='no' compat='no' dataRefreshTime='' filename='E:/FAKS/4. LJETNI/SKLADISTA SPPI/jp_projekt/Analiza Counter Strike natjecanja/dataset/dim_match_type.xlsx' interpretationMode='0' password='' server='' validate='no' />
           </named-connection>
-          <named-connection caption='dim_player' name='excel-direct.1h0suqi16sysef1ehe26m09l2zkk'>
-            <connection class='excel-direct' cleaning='no' compat='no' dataRefreshTime='' filename='E:/FAKS/4. LJETNI/SKLADISTA SPPI/jp_projekt/Analiza Counter Strike natjecanja/dataset/dim_player.xlsx' interpretationMode='0' password='' server='' validate='no' />
-          </named-connection>
           <named-connection caption='dim_team' name='excel-direct.1bt2ioi070qd9k13y0ctj1kaxmab'>
             <connection class='excel-direct' cleaning='no' compat='no' dataRefreshTime='' filename='E:/FAKS/4. LJETNI/SKLADISTA SPPI/jp_projekt/Analiza Counter Strike natjecanja/dataset/dim_team.xlsx' interpretationMode='0' password='' server='' validate='no' />
+          </named-connection>
+          <named-connection caption='dim_player' name='excel-direct.0t17tea1o0i2yr1ff84xw0xf74j1'>
+            <connection class='excel-direct' cleaning='no' compat='no' dataRefreshTime='' filename='E:/FAKS/4. LJETNI/SKLADISTA SPPI/jp_projekt/Analiza Counter Strike natjecanja/dataset/dim_player.xlsx' interpretationMode='0' password='' server='' validate='no' />
           </named-connection>
         </named-connections>
         <relation type='collection'>
@@ -101,20 +101,21 @@
               <column datatype='integer' name='match_type_best_of' ordinal='2' />
             </columns>
           </relation>
-          <relation connection='excel-direct.1h0suqi16sysef1ehe26m09l2zkk' name='dim_player' table='[dim_player$]' type='table'>
-            <columns gridOrigin='A1:L2801:no:A1:L2801:0' header='yes' outcome='2'>
+          <relation connection='excel-direct.0t17tea1o0i2yr1ff84xw0xf74j1' name='dim_player' table='[dim_player$]' type='table'>
+            <columns gridOrigin='A1:M2801:no:A1:M2801:0' header='yes' outcome='2'>
               <column datatype='integer' name='player_id' ordinal='0' />
               <column datatype='string' name='player_name' ordinal='1' />
               <column datatype='string' name='player_country' ordinal='2' />
               <column datatype='string' name='player_team' ordinal='3' />
-              <column datatype='integer' name='player_total_maps_played' ordinal='4' />
-              <column datatype='integer' name='player_total_matches_played' ordinal='5' />
-              <column datatype='real' name='player_kd' ordinal='6' />
-              <column datatype='real' name='player_rating' ordinal='7' />
-              <column datatype='integer' name='player_mvp_rewards' ordinal='8' />
-              <column datatype='real' name='player_accuracy_percent' ordinal='9' />
-              <column datatype='real' name='player_reaction_time_ms' ordinal='10' />
-              <column datatype='real' name='player_fatigue_index' ordinal='11' />
+              <column datatype='string' name='player_role' ordinal='4' />
+              <column datatype='integer' name='player_total_maps_played' ordinal='5' />
+              <column datatype='integer' name='player_total_matches_played' ordinal='6' />
+              <column datatype='real' name='player_kd' ordinal='7' />
+              <column datatype='real' name='player_rating' ordinal='8' />
+              <column datatype='integer' name='player_mvp_rewards' ordinal='9' />
+              <column datatype='real' name='player_accuracy_percent' ordinal='10' />
+              <column datatype='real' name='player_reaction_time_ms' ordinal='11' />
+              <column datatype='real' name='player_fatigue_index' ordinal='12' />
             </columns>
           </relation>
           <relation connection='excel-direct.1bt2ioi070qd9k13y0ctj1kaxmab' name='dim_team' table='[dim_team$]' type='table'>
@@ -165,6 +166,7 @@
           <map key='[player_name]' value='[dim_player].[player_name]' />
           <map key='[player_rating]' value='[dim_player].[player_rating]' />
           <map key='[player_reaction_time_ms]' value='[dim_player].[player_reaction_time_ms]' />
+          <map key='[player_role]' value='[dim_player].[player_role]' />
           <map key='[player_team]' value='[dim_player].[player_team]' />
           <map key='[player_total_maps_played]' value='[dim_player].[player_total_maps_played]' />
           <map key='[player_total_matches_played]' value='[dim_player].[player_total_matches_played]' />
@@ -246,7 +248,7 @@
             <contains-null>true</contains-null>
             <attributes>
               <attribute datatype='integer' name='context'>0</attribute>
-              <attribute datatype='string' name='gridOrigin'>&quot;A1:L2801:no:A1:L2801:0&quot;</attribute>
+              <attribute datatype='string' name='gridOrigin'>&quot;A1:M2801:no:A1:M2801:0&quot;</attribute>
               <attribute datatype='boolean' name='header'>true</attribute>
               <attribute datatype='integer' name='outcome'>2</attribute>
             </attributes>
@@ -675,7 +677,7 @@
             <attributes>
               <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
             </attributes>
-            <object-id>[dim!player_312E6E6D3F9346469ACCA9F6D4548809]</object-id>
+            <object-id>[dim!player_A73B0282D9C344CAB61C5D8080EE4DBF]</object-id>
           </metadata-record>
           <metadata-record class='column'>
             <remote-name>player_name</remote-name>
@@ -691,7 +693,7 @@
             <attributes>
               <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
             </attributes>
-            <object-id>[dim!player_312E6E6D3F9346469ACCA9F6D4548809]</object-id>
+            <object-id>[dim!player_A73B0282D9C344CAB61C5D8080EE4DBF]</object-id>
           </metadata-record>
           <metadata-record class='column'>
             <remote-name>player_country</remote-name>
@@ -707,7 +709,7 @@
             <attributes>
               <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
             </attributes>
-            <object-id>[dim!player_312E6E6D3F9346469ACCA9F6D4548809]</object-id>
+            <object-id>[dim!player_A73B0282D9C344CAB61C5D8080EE4DBF]</object-id>
           </metadata-record>
           <metadata-record class='column'>
             <remote-name>player_team</remote-name>
@@ -723,7 +725,23 @@
             <attributes>
               <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
             </attributes>
-            <object-id>[dim!player_312E6E6D3F9346469ACCA9F6D4548809]</object-id>
+            <object-id>[dim!player_A73B0282D9C344CAB61C5D8080EE4DBF]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>player_role</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[player_role]</local-name>
+            <parent-name>[dim_player]</parent-name>
+            <remote-alias>player_role</remote-alias>
+            <ordinal>30</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LHR_RHR_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+            <object-id>[dim!player_A73B0282D9C344CAB61C5D8080EE4DBF]</object-id>
           </metadata-record>
           <metadata-record class='column'>
             <remote-name>player_total_maps_played</remote-name>
@@ -731,21 +749,6 @@
             <local-name>[player_total_maps_played]</local-name>
             <parent-name>[dim_player]</parent-name>
             <remote-alias>player_total_maps_played</remote-alias>
-            <ordinal>30</ordinal>
-            <local-type>integer</local-type>
-            <aggregation>Sum</aggregation>
-            <contains-null>true</contains-null>
-            <attributes>
-              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
-            </attributes>
-            <object-id>[dim!player_312E6E6D3F9346469ACCA9F6D4548809]</object-id>
-          </metadata-record>
-          <metadata-record class='column'>
-            <remote-name>player_total_matches_played</remote-name>
-            <remote-type>20</remote-type>
-            <local-name>[player_total_matches_played]</local-name>
-            <parent-name>[dim_player]</parent-name>
-            <remote-alias>player_total_matches_played</remote-alias>
             <ordinal>31</ordinal>
             <local-type>integer</local-type>
             <aggregation>Sum</aggregation>
@@ -753,7 +756,22 @@
             <attributes>
               <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
             </attributes>
-            <object-id>[dim!player_312E6E6D3F9346469ACCA9F6D4548809]</object-id>
+            <object-id>[dim!player_A73B0282D9C344CAB61C5D8080EE4DBF]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>player_total_matches_played</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[player_total_matches_played]</local-name>
+            <parent-name>[dim_player]</parent-name>
+            <remote-alias>player_total_matches_played</remote-alias>
+            <ordinal>32</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+            <object-id>[dim!player_A73B0282D9C344CAB61C5D8080EE4DBF]</object-id>
           </metadata-record>
           <metadata-record class='column'>
             <remote-name>player_kd</remote-name>
@@ -761,22 +779,6 @@
             <local-name>[player_kd]</local-name>
             <parent-name>[dim_player]</parent-name>
             <remote-alias>player_kd</remote-alias>
-            <ordinal>32</ordinal>
-            <local-type>real</local-type>
-            <aggregation>Sum</aggregation>
-            <precision>15</precision>
-            <contains-null>true</contains-null>
-            <attributes>
-              <attribute datatype='string' name='DebugRemoteType'>&quot;R8&quot;</attribute>
-            </attributes>
-            <object-id>[dim!player_312E6E6D3F9346469ACCA9F6D4548809]</object-id>
-          </metadata-record>
-          <metadata-record class='column'>
-            <remote-name>player_rating</remote-name>
-            <remote-type>5</remote-type>
-            <local-name>[player_rating]</local-name>
-            <parent-name>[dim_player]</parent-name>
-            <remote-alias>player_rating</remote-alias>
             <ordinal>33</ordinal>
             <local-type>real</local-type>
             <aggregation>Sum</aggregation>
@@ -785,30 +787,15 @@
             <attributes>
               <attribute datatype='string' name='DebugRemoteType'>&quot;R8&quot;</attribute>
             </attributes>
-            <object-id>[dim!player_312E6E6D3F9346469ACCA9F6D4548809]</object-id>
+            <object-id>[dim!player_A73B0282D9C344CAB61C5D8080EE4DBF]</object-id>
           </metadata-record>
           <metadata-record class='column'>
-            <remote-name>player_mvp_rewards</remote-name>
-            <remote-type>20</remote-type>
-            <local-name>[player_mvp_rewards]</local-name>
-            <parent-name>[dim_player]</parent-name>
-            <remote-alias>player_mvp_rewards</remote-alias>
-            <ordinal>34</ordinal>
-            <local-type>integer</local-type>
-            <aggregation>Sum</aggregation>
-            <contains-null>true</contains-null>
-            <attributes>
-              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
-            </attributes>
-            <object-id>[dim!player_312E6E6D3F9346469ACCA9F6D4548809]</object-id>
-          </metadata-record>
-          <metadata-record class='column'>
-            <remote-name>player_accuracy_percent</remote-name>
+            <remote-name>player_rating</remote-name>
             <remote-type>5</remote-type>
-            <local-name>[player_accuracy_percent]</local-name>
+            <local-name>[player_rating]</local-name>
             <parent-name>[dim_player]</parent-name>
-            <remote-alias>player_accuracy_percent</remote-alias>
-            <ordinal>35</ordinal>
+            <remote-alias>player_rating</remote-alias>
+            <ordinal>34</ordinal>
             <local-type>real</local-type>
             <aggregation>Sum</aggregation>
             <precision>15</precision>
@@ -816,14 +803,29 @@
             <attributes>
               <attribute datatype='string' name='DebugRemoteType'>&quot;R8&quot;</attribute>
             </attributes>
-            <object-id>[dim!player_312E6E6D3F9346469ACCA9F6D4548809]</object-id>
+            <object-id>[dim!player_A73B0282D9C344CAB61C5D8080EE4DBF]</object-id>
           </metadata-record>
           <metadata-record class='column'>
-            <remote-name>player_reaction_time_ms</remote-name>
-            <remote-type>5</remote-type>
-            <local-name>[player_reaction_time_ms]</local-name>
+            <remote-name>player_mvp_rewards</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[player_mvp_rewards]</local-name>
             <parent-name>[dim_player]</parent-name>
-            <remote-alias>player_reaction_time_ms</remote-alias>
+            <remote-alias>player_mvp_rewards</remote-alias>
+            <ordinal>35</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+            <object-id>[dim!player_A73B0282D9C344CAB61C5D8080EE4DBF]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>player_accuracy_percent</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[player_accuracy_percent]</local-name>
+            <parent-name>[dim_player]</parent-name>
+            <remote-alias>player_accuracy_percent</remote-alias>
             <ordinal>36</ordinal>
             <local-type>real</local-type>
             <aggregation>Sum</aggregation>
@@ -832,14 +834,14 @@
             <attributes>
               <attribute datatype='string' name='DebugRemoteType'>&quot;R8&quot;</attribute>
             </attributes>
-            <object-id>[dim!player_312E6E6D3F9346469ACCA9F6D4548809]</object-id>
+            <object-id>[dim!player_A73B0282D9C344CAB61C5D8080EE4DBF]</object-id>
           </metadata-record>
           <metadata-record class='column'>
-            <remote-name>player_fatigue_index</remote-name>
+            <remote-name>player_reaction_time_ms</remote-name>
             <remote-type>5</remote-type>
-            <local-name>[player_fatigue_index]</local-name>
+            <local-name>[player_reaction_time_ms]</local-name>
             <parent-name>[dim_player]</parent-name>
-            <remote-alias>player_fatigue_index</remote-alias>
+            <remote-alias>player_reaction_time_ms</remote-alias>
             <ordinal>37</ordinal>
             <local-type>real</local-type>
             <aggregation>Sum</aggregation>
@@ -848,7 +850,23 @@
             <attributes>
               <attribute datatype='string' name='DebugRemoteType'>&quot;R8&quot;</attribute>
             </attributes>
-            <object-id>[dim!player_312E6E6D3F9346469ACCA9F6D4548809]</object-id>
+            <object-id>[dim!player_A73B0282D9C344CAB61C5D8080EE4DBF]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>player_fatigue_index</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[player_fatigue_index]</local-name>
+            <parent-name>[dim_player]</parent-name>
+            <remote-alias>player_fatigue_index</remote-alias>
+            <ordinal>38</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>15</precision>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;R8&quot;</attribute>
+            </attributes>
+            <object-id>[dim!player_A73B0282D9C344CAB61C5D8080EE4DBF]</object-id>
           </metadata-record>
           <metadata-record class='column'>
             <remote-name>team_id</remote-name>
@@ -856,7 +874,7 @@
             <local-name>[team_id (dim!team)]</local-name>
             <parent-name>[dim_team]</parent-name>
             <remote-alias>team_id</remote-alias>
-            <ordinal>38</ordinal>
+            <ordinal>39</ordinal>
             <local-type>integer</local-type>
             <aggregation>Sum</aggregation>
             <contains-null>true</contains-null>
@@ -871,7 +889,7 @@
             <local-name>[team_is_active]</local-name>
             <parent-name>[dim_team]</parent-name>
             <remote-alias>team_is_active</remote-alias>
-            <ordinal>39</ordinal>
+            <ordinal>40</ordinal>
             <local-type>integer</local-type>
             <aggregation>Sum</aggregation>
             <contains-null>true</contains-null>
@@ -886,7 +904,7 @@
             <local-name>[team_name]</local-name>
             <parent-name>[dim_team]</parent-name>
             <remote-alias>team_name</remote-alias>
-            <ordinal>40</ordinal>
+            <ordinal>41</ordinal>
             <local-type>string</local-type>
             <aggregation>Count</aggregation>
             <contains-null>true</contains-null>
@@ -902,7 +920,7 @@
             <local-name>[team_rating]</local-name>
             <parent-name>[dim_team]</parent-name>
             <remote-alias>team_rating</remote-alias>
-            <ordinal>41</ordinal>
+            <ordinal>42</ordinal>
             <local-type>real</local-type>
             <aggregation>Sum</aggregation>
             <precision>15</precision>
@@ -918,7 +936,7 @@
             <local-name>[team_total_matches_played]</local-name>
             <parent-name>[dim_team]</parent-name>
             <remote-alias>team_total_matches_played</remote-alias>
-            <ordinal>42</ordinal>
+            <ordinal>43</ordinal>
             <local-type>integer</local-type>
             <aggregation>Sum</aggregation>
             <contains-null>true</contains-null>
@@ -933,7 +951,7 @@
             <local-name>[team_total_kd]</local-name>
             <parent-name>[dim_team]</parent-name>
             <remote-alias>team_total_kd</remote-alias>
-            <ordinal>43</ordinal>
+            <ordinal>44</ordinal>
             <local-type>real</local-type>
             <aggregation>Sum</aggregation>
             <precision>15</precision>
@@ -949,7 +967,7 @@
             <local-name>[team_win_probability]</local-name>
             <parent-name>[dim_team]</parent-name>
             <remote-alias>team_win_probability</remote-alias>
-            <ordinal>44</ordinal>
+            <ordinal>45</ordinal>
             <local-type>real</local-type>
             <aggregation>Sum</aggregation>
             <precision>15</precision>
@@ -965,7 +983,7 @@
             <local-name>[team_total_mvp_rewards]</local-name>
             <parent-name>[dim_team]</parent-name>
             <remote-alias>team_total_mvp_rewards</remote-alias>
-            <ordinal>45</ordinal>
+            <ordinal>46</ordinal>
             <local-type>integer</local-type>
             <aggregation>Sum</aggregation>
             <contains-null>true</contains-null>
@@ -980,7 +998,7 @@
             <local-name>[team_finals_won]</local-name>
             <parent-name>[dim_team]</parent-name>
             <remote-alias>team_finals_won</remote-alias>
-            <ordinal>46</ordinal>
+            <ordinal>47</ordinal>
             <local-type>integer</local-type>
             <aggregation>Sum</aggregation>
             <contains-null>true</contains-null>
@@ -992,10 +1010,13 @@
         </metadata-records>
       </connection>
       <aliases enabled='yes' />
+      <column caption='Date Level' datatype='string' name='[Calculation_37278944375898112]' role='dimension' type='nominal'>
+        <calculation class='tableau' formula='IF [Parameters].[Parameter 1] = &quot;Month&quot; &#13;&#10;  THEN DATENAME(&apos;month&apos;, DATE([date_full_date]))&#13;&#10;ELSEIF [Parameters].[Parameter 1] = &quot;Quarter&quot; &#13;&#10;  THEN &quot;Q&quot; + STR(DATEPART(&apos;quarter&apos;, DATE([date_full_date])))&#13;&#10;ELSE STR([date_year])&#13;&#10;END' />
+      </column>
       <column caption='dim_date' datatype='table' name='[__tableau_internal_object_id__].[dim!date_A11981C963F4432E9C2DF27E974A6A6F]' role='measure' type='quantitative' />
       <column caption='dim_map' datatype='table' name='[__tableau_internal_object_id__].[dim!map_53EFCEE5698E4D3794D7E9735C91385D]' role='measure' type='quantitative' />
       <column caption='dim_match_type' datatype='table' name='[__tableau_internal_object_id__].[dim!match!type_A811388AAA044B759D5CFCA84F17F826]' role='measure' type='quantitative' />
-      <column caption='dim_player' datatype='table' name='[__tableau_internal_object_id__].[dim!player_312E6E6D3F9346469ACCA9F6D4548809]' role='measure' type='quantitative' />
+      <column caption='dim_player' datatype='table' name='[__tableau_internal_object_id__].[dim!player_A73B0282D9C344CAB61C5D8080EE4DBF]' role='measure' type='quantitative' />
       <column caption='dim_team' datatype='table' name='[__tableau_internal_object_id__].[dim!team_37113304798349FD922591909F516891]' role='measure' type='quantitative' />
       <column caption='fact_match_performance' datatype='table' name='[__tableau_internal_object_id__].[fact!match!performance_901591F976574A48AEC843DC4E84900C]' role='measure' type='quantitative' />
       <column datatype='integer' name='[date_id (dim!date)]' role='dimension' type='ordinal' />
@@ -1011,17 +1032,19 @@
       <column datatype='string' name='[player_country]' role='dimension' semantic-role='[Country].[ISO3166_2]' type='nominal' />
       <column datatype='integer' name='[player_id (dim!player)]' role='dimension' type='ordinal' />
       <column datatype='integer' name='[player_id]' role='dimension' type='ordinal' />
+      <column datatype='string' name='[player_role]' role='dimension' type='nominal' />
       <column datatype='integer' name='[record_id]' role='dimension' type='ordinal' />
       <column datatype='integer' name='[team_id (dim!team)]' role='dimension' type='ordinal' />
       <column datatype='integer' name='[team_id]' role='dimension' type='ordinal' />
+      <column-instance column='[player_role]' derivation='None' name='[none:player_role:nk]' pivot='key' type='nominal' />
       <extract _.fcp.VConnDownstreamExtractsWithWarnings.true...user-specific='false' count='-1' enabled='true' object-id='' units='records'>
-        <connection access_mode='readonly' author-locale='en_GB' class='hyper' dbname='C:/Users/JANPOB~1/AppData/Local/Temp/TableauTemp/#TableauTemp_15btzok1dflp28118u25p0f9nx8s.hyper' default-settings='hyper' schema='Extract' sslmode='' tablename='Extract' update-time='05/17/2026 01:28:34 PM' username='tableau_internal_user'>
+        <connection access_mode='readonly' author-locale='en_GB' class='hyper' dbname='C:/Users/JANPOB~1/AppData/Local/Temp/TableauTemp/#TableauTemp_01yrvqy0p76t7k1danul017wez8z.hyper' default-settings='hyper' schema='Extract' sslmode='' tablename='Extract' update-time='05/17/2026 02:48:36 PM' username='tableau_internal_user'>
           <relation type='collection'>
             <relation name='fact!match!performance_901591F976574A48AEC843DC4E84900C' table='[Extract].[fact!match!performance_901591F976574A48AEC843DC4E84900C]' type='table' />
             <relation name='dim!date_A11981C963F4432E9C2DF27E974A6A6F' table='[Extract].[dim!date_A11981C963F4432E9C2DF27E974A6A6F]' type='table' />
             <relation name='dim!map_53EFCEE5698E4D3794D7E9735C91385D' table='[Extract].[dim!map_53EFCEE5698E4D3794D7E9735C91385D]' type='table' />
             <relation name='dim!match!type_A811388AAA044B759D5CFCA84F17F826' table='[Extract].[dim!match!type_A811388AAA044B759D5CFCA84F17F826]' type='table' />
-            <relation name='dim!player_312E6E6D3F9346469ACCA9F6D4548809' table='[Extract].[dim!player_312E6E6D3F9346469ACCA9F6D4548809]' type='table' />
+            <relation name='dim!player_A73B0282D9C344CAB61C5D8080EE4DBF' table='[Extract].[dim!player_A73B0282D9C344CAB61C5D8080EE4DBF]' type='table' />
             <relation name='dim!team_37113304798349FD922591909F516891' table='[Extract].[dim!team_37113304798349FD922591909F516891]' type='table' />
           </relation>
           <cols>
@@ -1048,19 +1071,20 @@
             <map key='[match_type_id]' value='[fact!match!performance_901591F976574A48AEC843DC4E84900C].[match_type_id]' />
             <map key='[match_wining_team]' value='[fact!match!performance_901591F976574A48AEC843DC4E84900C].[match_wining_team]' />
             <map key='[opponent_team_id]' value='[fact!match!performance_901591F976574A48AEC843DC4E84900C].[opponent_team_id]' />
-            <map key='[player_accuracy_percent]' value='[dim!player_312E6E6D3F9346469ACCA9F6D4548809].[player_accuracy_percent]' />
-            <map key='[player_country]' value='[dim!player_312E6E6D3F9346469ACCA9F6D4548809].[player_country]' />
-            <map key='[player_fatigue_index]' value='[dim!player_312E6E6D3F9346469ACCA9F6D4548809].[player_fatigue_index]' />
-            <map key='[player_id (dim!player)]' value='[dim!player_312E6E6D3F9346469ACCA9F6D4548809].[player_id]' />
+            <map key='[player_accuracy_percent]' value='[dim!player_A73B0282D9C344CAB61C5D8080EE4DBF].[player_accuracy_percent]' />
+            <map key='[player_country]' value='[dim!player_A73B0282D9C344CAB61C5D8080EE4DBF].[player_country]' />
+            <map key='[player_fatigue_index]' value='[dim!player_A73B0282D9C344CAB61C5D8080EE4DBF].[player_fatigue_index]' />
+            <map key='[player_id (dim!player)]' value='[dim!player_A73B0282D9C344CAB61C5D8080EE4DBF].[player_id]' />
             <map key='[player_id]' value='[fact!match!performance_901591F976574A48AEC843DC4E84900C].[player_id]' />
-            <map key='[player_kd]' value='[dim!player_312E6E6D3F9346469ACCA9F6D4548809].[player_kd]' />
-            <map key='[player_mvp_rewards]' value='[dim!player_312E6E6D3F9346469ACCA9F6D4548809].[player_mvp_rewards]' />
-            <map key='[player_name]' value='[dim!player_312E6E6D3F9346469ACCA9F6D4548809].[player_name]' />
-            <map key='[player_rating]' value='[dim!player_312E6E6D3F9346469ACCA9F6D4548809].[player_rating]' />
-            <map key='[player_reaction_time_ms]' value='[dim!player_312E6E6D3F9346469ACCA9F6D4548809].[player_reaction_time_ms]' />
-            <map key='[player_team]' value='[dim!player_312E6E6D3F9346469ACCA9F6D4548809].[player_team]' />
-            <map key='[player_total_maps_played]' value='[dim!player_312E6E6D3F9346469ACCA9F6D4548809].[player_total_maps_played]' />
-            <map key='[player_total_matches_played]' value='[dim!player_312E6E6D3F9346469ACCA9F6D4548809].[player_total_matches_played]' />
+            <map key='[player_kd]' value='[dim!player_A73B0282D9C344CAB61C5D8080EE4DBF].[player_kd]' />
+            <map key='[player_mvp_rewards]' value='[dim!player_A73B0282D9C344CAB61C5D8080EE4DBF].[player_mvp_rewards]' />
+            <map key='[player_name]' value='[dim!player_A73B0282D9C344CAB61C5D8080EE4DBF].[player_name]' />
+            <map key='[player_rating]' value='[dim!player_A73B0282D9C344CAB61C5D8080EE4DBF].[player_rating]' />
+            <map key='[player_reaction_time_ms]' value='[dim!player_A73B0282D9C344CAB61C5D8080EE4DBF].[player_reaction_time_ms]' />
+            <map key='[player_role]' value='[dim!player_A73B0282D9C344CAB61C5D8080EE4DBF].[player_role]' />
+            <map key='[player_team]' value='[dim!player_A73B0282D9C344CAB61C5D8080EE4DBF].[player_team]' />
+            <map key='[player_total_maps_played]' value='[dim!player_A73B0282D9C344CAB61C5D8080EE4DBF].[player_total_maps_played]' />
+            <map key='[player_total_matches_played]' value='[dim!player_A73B0282D9C344CAB61C5D8080EE4DBF].[player_total_matches_played]' />
             <map key='[record_id]' value='[fact!match!performance_901591F976574A48AEC843DC4E84900C].[record_id]' />
             <map key='[team_finals_won]' value='[dim!team_37113304798349FD922591909F516891].[team_finals_won]' />
             <map key='[team_id (dim!team)]' value='[dim!team_37113304798349FD922591909F516891].[team_id]' />
@@ -1448,172 +1472,187 @@
               <remote-name>player_id</remote-name>
               <remote-type>20</remote-type>
               <local-name>[player_id (dim!player)]</local-name>
-              <parent-name>[dim!player_312E6E6D3F9346469ACCA9F6D4548809]</parent-name>
+              <parent-name>[dim!player_A73B0282D9C344CAB61C5D8080EE4DBF]</parent-name>
               <remote-alias>player_id</remote-alias>
               <ordinal>26</ordinal>
               <family>dim_player</family>
               <local-type>integer</local-type>
               <aggregation>Sum</aggregation>
-              <approx-count>518</approx-count>
+              <approx-count>514</approx-count>
               <contains-null>true</contains-null>
-              <object-id>[dim!player_312E6E6D3F9346469ACCA9F6D4548809]</object-id>
+              <object-id>[dim!player_A73B0282D9C344CAB61C5D8080EE4DBF]</object-id>
             </metadata-record>
             <metadata-record class='column'>
               <remote-name>player_name</remote-name>
               <remote-type>129</remote-type>
               <local-name>[player_name]</local-name>
-              <parent-name>[dim!player_312E6E6D3F9346469ACCA9F6D4548809]</parent-name>
+              <parent-name>[dim!player_A73B0282D9C344CAB61C5D8080EE4DBF]</parent-name>
               <remote-alias>player_name</remote-alias>
               <ordinal>27</ordinal>
               <family>dim_player</family>
               <local-type>string</local-type>
               <aggregation>Count</aggregation>
-              <approx-count>517</approx-count>
+              <approx-count>510</approx-count>
               <contains-null>true</contains-null>
               <collation flag='0' name='binary' />
-              <object-id>[dim!player_312E6E6D3F9346469ACCA9F6D4548809]</object-id>
+              <object-id>[dim!player_A73B0282D9C344CAB61C5D8080EE4DBF]</object-id>
             </metadata-record>
             <metadata-record class='column'>
               <remote-name>player_country</remote-name>
               <remote-type>129</remote-type>
               <local-name>[player_country]</local-name>
-              <parent-name>[dim!player_312E6E6D3F9346469ACCA9F6D4548809]</parent-name>
+              <parent-name>[dim!player_A73B0282D9C344CAB61C5D8080EE4DBF]</parent-name>
               <remote-alias>player_country</remote-alias>
               <ordinal>28</ordinal>
               <family>dim_player</family>
               <local-type>string</local-type>
               <aggregation>Count</aggregation>
-              <approx-count>61</approx-count>
+              <approx-count>63</approx-count>
               <contains-null>true</contains-null>
               <collation flag='0' name='binary' />
-              <object-id>[dim!player_312E6E6D3F9346469ACCA9F6D4548809]</object-id>
+              <object-id>[dim!player_A73B0282D9C344CAB61C5D8080EE4DBF]</object-id>
             </metadata-record>
             <metadata-record class='column'>
               <remote-name>player_team</remote-name>
               <remote-type>129</remote-type>
               <local-name>[player_team]</local-name>
-              <parent-name>[dim!player_312E6E6D3F9346469ACCA9F6D4548809]</parent-name>
+              <parent-name>[dim!player_A73B0282D9C344CAB61C5D8080EE4DBF]</parent-name>
               <remote-alias>player_team</remote-alias>
               <ordinal>29</ordinal>
               <family>dim_player</family>
               <local-type>string</local-type>
               <aggregation>Count</aggregation>
-              <approx-count>256</approx-count>
+              <approx-count>267</approx-count>
               <contains-null>true</contains-null>
               <collation flag='0' name='binary' />
-              <object-id>[dim!player_312E6E6D3F9346469ACCA9F6D4548809]</object-id>
+              <object-id>[dim!player_A73B0282D9C344CAB61C5D8080EE4DBF]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>player_role</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[player_role]</local-name>
+              <parent-name>[dim!player_A73B0282D9C344CAB61C5D8080EE4DBF]</parent-name>
+              <remote-alias>player_role</remote-alias>
+              <ordinal>30</ordinal>
+              <family>dim_player</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>4</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='binary' />
+              <object-id>[dim!player_A73B0282D9C344CAB61C5D8080EE4DBF]</object-id>
             </metadata-record>
             <metadata-record class='column'>
               <remote-name>player_total_maps_played</remote-name>
               <remote-type>20</remote-type>
               <local-name>[player_total_maps_played]</local-name>
-              <parent-name>[dim!player_312E6E6D3F9346469ACCA9F6D4548809]</parent-name>
+              <parent-name>[dim!player_A73B0282D9C344CAB61C5D8080EE4DBF]</parent-name>
               <remote-alias>player_total_maps_played</remote-alias>
-              <ordinal>30</ordinal>
+              <ordinal>31</ordinal>
               <family>dim_player</family>
               <local-type>integer</local-type>
               <aggregation>Sum</aggregation>
-              <approx-count>401</approx-count>
+              <approx-count>397</approx-count>
               <contains-null>true</contains-null>
-              <object-id>[dim!player_312E6E6D3F9346469ACCA9F6D4548809]</object-id>
+              <object-id>[dim!player_A73B0282D9C344CAB61C5D8080EE4DBF]</object-id>
             </metadata-record>
             <metadata-record class='column'>
               <remote-name>player_total_matches_played</remote-name>
               <remote-type>20</remote-type>
               <local-name>[player_total_matches_played]</local-name>
-              <parent-name>[dim!player_312E6E6D3F9346469ACCA9F6D4548809]</parent-name>
+              <parent-name>[dim!player_A73B0282D9C344CAB61C5D8080EE4DBF]</parent-name>
               <remote-alias>player_total_matches_played</remote-alias>
-              <ordinal>31</ordinal>
+              <ordinal>32</ordinal>
               <family>dim_player</family>
               <local-type>integer</local-type>
               <aggregation>Sum</aggregation>
-              <approx-count>336</approx-count>
+              <approx-count>324</approx-count>
               <contains-null>true</contains-null>
-              <object-id>[dim!player_312E6E6D3F9346469ACCA9F6D4548809]</object-id>
+              <object-id>[dim!player_A73B0282D9C344CAB61C5D8080EE4DBF]</object-id>
             </metadata-record>
             <metadata-record class='column'>
               <remote-name>player_kd</remote-name>
               <remote-type>5</remote-type>
               <local-name>[player_kd]</local-name>
-              <parent-name>[dim!player_312E6E6D3F9346469ACCA9F6D4548809]</parent-name>
+              <parent-name>[dim!player_A73B0282D9C344CAB61C5D8080EE4DBF]</parent-name>
               <remote-alias>player_kd</remote-alias>
-              <ordinal>32</ordinal>
+              <ordinal>33</ordinal>
               <family>dim_player</family>
               <local-type>real</local-type>
               <aggregation>Sum</aggregation>
               <approx-count>38</approx-count>
               <contains-null>true</contains-null>
-              <object-id>[dim!player_312E6E6D3F9346469ACCA9F6D4548809]</object-id>
+              <object-id>[dim!player_A73B0282D9C344CAB61C5D8080EE4DBF]</object-id>
             </metadata-record>
             <metadata-record class='column'>
               <remote-name>player_rating</remote-name>
               <remote-type>5</remote-type>
               <local-name>[player_rating]</local-name>
-              <parent-name>[dim!player_312E6E6D3F9346469ACCA9F6D4548809]</parent-name>
+              <parent-name>[dim!player_A73B0282D9C344CAB61C5D8080EE4DBF]</parent-name>
               <remote-alias>player_rating</remote-alias>
-              <ordinal>33</ordinal>
+              <ordinal>34</ordinal>
               <family>dim_player</family>
               <local-type>real</local-type>
               <aggregation>Sum</aggregation>
-              <approx-count>25</approx-count>
+              <approx-count>24</approx-count>
               <contains-null>true</contains-null>
-              <object-id>[dim!player_312E6E6D3F9346469ACCA9F6D4548809]</object-id>
+              <object-id>[dim!player_A73B0282D9C344CAB61C5D8080EE4DBF]</object-id>
             </metadata-record>
             <metadata-record class='column'>
               <remote-name>player_mvp_rewards</remote-name>
               <remote-type>20</remote-type>
               <local-name>[player_mvp_rewards]</local-name>
-              <parent-name>[dim!player_312E6E6D3F9346469ACCA9F6D4548809]</parent-name>
+              <parent-name>[dim!player_A73B0282D9C344CAB61C5D8080EE4DBF]</parent-name>
               <remote-alias>player_mvp_rewards</remote-alias>
-              <ordinal>34</ordinal>
+              <ordinal>35</ordinal>
               <family>dim_player</family>
               <local-type>integer</local-type>
               <aggregation>Sum</aggregation>
               <approx-count>4</approx-count>
               <contains-null>true</contains-null>
-              <object-id>[dim!player_312E6E6D3F9346469ACCA9F6D4548809]</object-id>
+              <object-id>[dim!player_A73B0282D9C344CAB61C5D8080EE4DBF]</object-id>
             </metadata-record>
             <metadata-record class='column'>
               <remote-name>player_accuracy_percent</remote-name>
               <remote-type>5</remote-type>
               <local-name>[player_accuracy_percent]</local-name>
-              <parent-name>[dim!player_312E6E6D3F9346469ACCA9F6D4548809]</parent-name>
+              <parent-name>[dim!player_A73B0282D9C344CAB61C5D8080EE4DBF]</parent-name>
               <remote-alias>player_accuracy_percent</remote-alias>
-              <ordinal>35</ordinal>
+              <ordinal>36</ordinal>
               <family>dim_player</family>
               <local-type>real</local-type>
               <aggregation>Sum</aggregation>
-              <approx-count>1388</approx-count>
+              <approx-count>1413</approx-count>
               <contains-null>true</contains-null>
-              <object-id>[dim!player_312E6E6D3F9346469ACCA9F6D4548809]</object-id>
+              <object-id>[dim!player_A73B0282D9C344CAB61C5D8080EE4DBF]</object-id>
             </metadata-record>
             <metadata-record class='column'>
               <remote-name>player_reaction_time_ms</remote-name>
               <remote-type>5</remote-type>
               <local-name>[player_reaction_time_ms]</local-name>
-              <parent-name>[dim!player_312E6E6D3F9346469ACCA9F6D4548809]</parent-name>
+              <parent-name>[dim!player_A73B0282D9C344CAB61C5D8080EE4DBF]</parent-name>
               <remote-alias>player_reaction_time_ms</remote-alias>
-              <ordinal>36</ordinal>
+              <ordinal>37</ordinal>
               <family>dim_player</family>
               <local-type>real</local-type>
               <aggregation>Sum</aggregation>
-              <approx-count>1765</approx-count>
+              <approx-count>1767</approx-count>
               <contains-null>true</contains-null>
-              <object-id>[dim!player_312E6E6D3F9346469ACCA9F6D4548809]</object-id>
+              <object-id>[dim!player_A73B0282D9C344CAB61C5D8080EE4DBF]</object-id>
             </metadata-record>
             <metadata-record class='column'>
               <remote-name>player_fatigue_index</remote-name>
               <remote-type>5</remote-type>
               <local-name>[player_fatigue_index]</local-name>
-              <parent-name>[dim!player_312E6E6D3F9346469ACCA9F6D4548809]</parent-name>
+              <parent-name>[dim!player_A73B0282D9C344CAB61C5D8080EE4DBF]</parent-name>
               <remote-alias>player_fatigue_index</remote-alias>
-              <ordinal>37</ordinal>
+              <ordinal>38</ordinal>
               <family>dim_player</family>
               <local-type>real</local-type>
               <aggregation>Sum</aggregation>
               <approx-count>101</approx-count>
               <contains-null>true</contains-null>
-              <object-id>[dim!player_312E6E6D3F9346469ACCA9F6D4548809]</object-id>
+              <object-id>[dim!player_A73B0282D9C344CAB61C5D8080EE4DBF]</object-id>
             </metadata-record>
             <metadata-record class='column'>
               <remote-name>team_id</remote-name>
@@ -1621,7 +1660,7 @@
               <local-name>[team_id (dim!team)]</local-name>
               <parent-name>[dim!team_37113304798349FD922591909F516891]</parent-name>
               <remote-alias>team_id</remote-alias>
-              <ordinal>38</ordinal>
+              <ordinal>39</ordinal>
               <family>dim_team</family>
               <local-type>integer</local-type>
               <aggregation>Sum</aggregation>
@@ -1635,7 +1674,7 @@
               <local-name>[team_is_active]</local-name>
               <parent-name>[dim!team_37113304798349FD922591909F516891]</parent-name>
               <remote-alias>team_is_active</remote-alias>
-              <ordinal>39</ordinal>
+              <ordinal>40</ordinal>
               <family>dim_team</family>
               <local-type>integer</local-type>
               <aggregation>Sum</aggregation>
@@ -1649,7 +1688,7 @@
               <local-name>[team_name]</local-name>
               <parent-name>[dim!team_37113304798349FD922591909F516891]</parent-name>
               <remote-alias>team_name</remote-alias>
-              <ordinal>40</ordinal>
+              <ordinal>41</ordinal>
               <family>dim_team</family>
               <local-type>string</local-type>
               <aggregation>Count</aggregation>
@@ -1664,7 +1703,7 @@
               <local-name>[team_rating]</local-name>
               <parent-name>[dim!team_37113304798349FD922591909F516891]</parent-name>
               <remote-alias>team_rating</remote-alias>
-              <ordinal>41</ordinal>
+              <ordinal>42</ordinal>
               <family>dim_team</family>
               <local-type>real</local-type>
               <aggregation>Sum</aggregation>
@@ -1678,7 +1717,7 @@
               <local-name>[team_total_matches_played]</local-name>
               <parent-name>[dim!team_37113304798349FD922591909F516891]</parent-name>
               <remote-alias>team_total_matches_played</remote-alias>
-              <ordinal>42</ordinal>
+              <ordinal>43</ordinal>
               <family>dim_team</family>
               <local-type>integer</local-type>
               <aggregation>Sum</aggregation>
@@ -1692,7 +1731,7 @@
               <local-name>[team_total_kd]</local-name>
               <parent-name>[dim!team_37113304798349FD922591909F516891]</parent-name>
               <remote-alias>team_total_kd</remote-alias>
-              <ordinal>43</ordinal>
+              <ordinal>44</ordinal>
               <family>dim_team</family>
               <local-type>real</local-type>
               <aggregation>Sum</aggregation>
@@ -1706,7 +1745,7 @@
               <local-name>[team_win_probability]</local-name>
               <parent-name>[dim!team_37113304798349FD922591909F516891]</parent-name>
               <remote-alias>team_win_probability</remote-alias>
-              <ordinal>44</ordinal>
+              <ordinal>45</ordinal>
               <family>dim_team</family>
               <local-type>real</local-type>
               <aggregation>Sum</aggregation>
@@ -1720,7 +1759,7 @@
               <local-name>[team_total_mvp_rewards]</local-name>
               <parent-name>[dim!team_37113304798349FD922591909F516891]</parent-name>
               <remote-alias>team_total_mvp_rewards</remote-alias>
-              <ordinal>45</ordinal>
+              <ordinal>46</ordinal>
               <family>dim_team</family>
               <local-type>integer</local-type>
               <aggregation>Sum</aggregation>
@@ -1734,7 +1773,7 @@
               <local-name>[team_finals_won]</local-name>
               <parent-name>[dim!team_37113304798349FD922591909F516891]</parent-name>
               <remote-alias>team_finals_won</remote-alias>
-              <ordinal>46</ordinal>
+              <ordinal>47</ordinal>
               <family>dim_team</family>
               <local-type>integer</local-type>
               <aggregation>Sum</aggregation>
@@ -1745,11 +1784,34 @@
           </metadata-records>
         </connection>
       </extract>
-      <layout dim-ordering='alphabetic' measure-ordering='alphabetic' show-structure='true' />
+      <layout common-percentage='0.973025' dim-ordering='alphabetic' measure-ordering='alphabetic' parameter-percentage='0.026975' show-structure='true' user-set-layout-v2='true' />
+      <style>
+        <style-rule element='mark'>
+          <encoding attr='shape' field='[none:player_role:nk]' type='shape'>
+            <map to='circle'>
+              <bucket>&quot;AWPer&quot;</bucket>
+            </map>
+            <map to='plus'>
+              <bucket>&quot;IGL&quot;</bucket>
+            </map>
+            <map to='square'>
+              <bucket>&quot;Entry Fragger&quot;</bucket>
+            </map>
+            <map to='times'>
+              <bucket>&quot;Rifler&quot;</bucket>
+            </map>
+          </encoding>
+        </style-rule>
+      </style>
       <semantic-values>
         <semantic-value key='[Country].[Name]' value='&quot;Croatia&quot;' />
       </semantic-values>
       <date-options start-of-week='monday' />
+      <datasource-dependencies datasource='Parameters'>
+        <column caption='Date Granularity' datatype='string' name='[Parameter 1]' param-domain-type='list' role='measure' type='nominal' value='&quot;Quarter&quot;'>
+          <calculation class='tableau' formula='&quot;Quarter&quot;' />
+        </column>
+      </datasource-dependencies>
       <object-graph>
         <objects>
           <object caption='dim_date' id='dim!date_A11981C963F4432E9C2DF27E974A6A6F'>
@@ -1797,27 +1859,28 @@
               <relation name='dim!match!type_A811388AAA044B759D5CFCA84F17F826' table='[Extract].[dim!match!type_A811388AAA044B759D5CFCA84F17F826]' type='table' />
             </properties>
           </object>
-          <object caption='dim_player' id='dim!player_312E6E6D3F9346469ACCA9F6D4548809'>
+          <object caption='dim_player' id='dim!player_A73B0282D9C344CAB61C5D8080EE4DBF'>
             <properties context=''>
-              <relation connection='excel-direct.1h0suqi16sysef1ehe26m09l2zkk' name='dim_player' table='[dim_player$]' type='table'>
-                <columns gridOrigin='A1:L2801:no:A1:L2801:0' header='yes' outcome='2'>
+              <relation connection='excel-direct.0t17tea1o0i2yr1ff84xw0xf74j1' name='dim_player' table='[dim_player$]' type='table'>
+                <columns gridOrigin='A1:M2801:no:A1:M2801:0' header='yes' outcome='2'>
                   <column datatype='integer' name='player_id' ordinal='0' />
                   <column datatype='string' name='player_name' ordinal='1' />
                   <column datatype='string' name='player_country' ordinal='2' />
                   <column datatype='string' name='player_team' ordinal='3' />
-                  <column datatype='integer' name='player_total_maps_played' ordinal='4' />
-                  <column datatype='integer' name='player_total_matches_played' ordinal='5' />
-                  <column datatype='real' name='player_kd' ordinal='6' />
-                  <column datatype='real' name='player_rating' ordinal='7' />
-                  <column datatype='integer' name='player_mvp_rewards' ordinal='8' />
-                  <column datatype='real' name='player_accuracy_percent' ordinal='9' />
-                  <column datatype='real' name='player_reaction_time_ms' ordinal='10' />
-                  <column datatype='real' name='player_fatigue_index' ordinal='11' />
+                  <column datatype='string' name='player_role' ordinal='4' />
+                  <column datatype='integer' name='player_total_maps_played' ordinal='5' />
+                  <column datatype='integer' name='player_total_matches_played' ordinal='6' />
+                  <column datatype='real' name='player_kd' ordinal='7' />
+                  <column datatype='real' name='player_rating' ordinal='8' />
+                  <column datatype='integer' name='player_mvp_rewards' ordinal='9' />
+                  <column datatype='real' name='player_accuracy_percent' ordinal='10' />
+                  <column datatype='real' name='player_reaction_time_ms' ordinal='11' />
+                  <column datatype='real' name='player_fatigue_index' ordinal='12' />
                 </columns>
               </relation>
             </properties>
             <properties context='extract'>
-              <relation name='dim!player_312E6E6D3F9346469ACCA9F6D4548809' table='[Extract].[dim!player_312E6E6D3F9346469ACCA9F6D4548809]' type='table' />
+              <relation name='dim!player_A73B0282D9C344CAB61C5D8080EE4DBF' table='[Extract].[dim!player_A73B0282D9C344CAB61C5D8080EE4DBF]' type='table' />
             </properties>
           </object>
           <object caption='dim_team' id='dim!team_37113304798349FD922591909F516891'>
@@ -1897,7 +1960,7 @@
               <expression op='[player_id (dim!player)]' />
             </expression>
             <first-end-point object-id='fact!match!performance_901591F976574A48AEC843DC4E84900C' />
-            <second-end-point object-id='dim!player_312E6E6D3F9346469ACCA9F6D4548809' />
+            <second-end-point object-id='dim!player_A73B0282D9C344CAB61C5D8080EE4DBF' />
           </relationship>
           <relationship>
             <expression op='='>
@@ -1935,20 +1998,95 @@
     <worksheet name='Player aim stats'>
       <table>
         <view>
-          <datasources />
+          <datasources>
+            <datasource caption='fact_match_performance+ (Multiple Connections)' name='federated.0bzc6h80vfb8po1cwr5vz0mv0jjm' />
+            <datasource name='Parameters' />
+          </datasources>
+          <datasource-dependencies datasource='Parameters'>
+            <column caption='Date Granularity' datatype='string' name='[Parameter 1]' param-domain-type='list' role='measure' type='nominal' value='&quot;Quarter&quot;'>
+              <calculation class='tableau' formula='&quot;Quarter&quot;' />
+            </column>
+          </datasource-dependencies>
+          <datasource-dependencies datasource='federated.0bzc6h80vfb8po1cwr5vz0mv0jjm'>
+            <column caption='Date Level' datatype='string' name='[Calculation_37278944375898112]' role='dimension' type='nominal'>
+              <calculation class='tableau' formula='IF [Parameters].[Parameter 1] = &quot;Month&quot; &#13;&#10;  THEN DATENAME(&apos;month&apos;, DATE([date_full_date]))&#13;&#10;ELSEIF [Parameters].[Parameter 1] = &quot;Quarter&quot; &#13;&#10;  THEN &quot;Q&quot; + STR(DATEPART(&apos;quarter&apos;, DATE([date_full_date])))&#13;&#10;ELSE STR([date_year])&#13;&#10;END' />
+            </column>
+            <column-instance column='[player_accuracy_percent]' derivation='Avg' name='[avg:player_accuracy_percent:qk]' pivot='key' type='quantitative' />
+            <column datatype='string' name='[date_full_date]' role='dimension' type='nominal' />
+            <column datatype='integer' name='[date_year]' role='dimension' type='quantitative' />
+            <column datatype='string' name='[map_name]' role='dimension' type='nominal' />
+            <column-instance column='[Calculation_37278944375898112]' derivation='None' name='[none:Calculation_37278944375898112:nk]' pivot='key' type='nominal' />
+            <column-instance column='[date_year]' derivation='None' name='[none:date_year:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[map_name]' derivation='None' name='[none:map_name:nk]' pivot='key' type='nominal' />
+            <column-instance column='[player_name]' derivation='None' name='[none:player_name:nk]' pivot='key' type='nominal' />
+            <column-instance column='[player_role]' derivation='None' name='[none:player_role:nk]' pivot='key' type='nominal' />
+            <column-instance column='[team_name]' derivation='None' name='[none:team_name:nk]' pivot='key' type='nominal' />
+            <column datatype='real' name='[player_accuracy_percent]' role='measure' type='quantitative' />
+            <column datatype='real' name='[player_kd]' role='measure' type='quantitative' />
+            <column datatype='string' name='[player_name]' role='dimension' type='nominal' />
+            <column datatype='real' name='[player_rating]' role='measure' type='quantitative' />
+            <column datatype='string' name='[player_role]' role='dimension' type='nominal' />
+            <column datatype='integer' name='[player_total_maps_played]' role='measure' type='quantitative' />
+            <column-instance column='[player_accuracy_percent]' derivation='Sum' name='[sum:player_accuracy_percent:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[player_kd]' derivation='Sum' name='[sum:player_kd:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[player_rating]' derivation='Sum' name='[sum:player_rating:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[player_total_maps_played]' derivation='Sum' name='[sum:player_total_maps_played:qk]' pivot='key' type='quantitative' />
+            <column datatype='string' name='[team_name]' role='dimension' type='nominal' />
+          </datasource-dependencies>
+          <filter class='quantitative' column='[federated.0bzc6h80vfb8po1cwr5vz0mv0jjm].[none:date_year:qk]' included-values='in-range'>
+            <min>2022</min>
+            <max>2022</max>
+          </filter>
+          <filter class='categorical' column='[federated.0bzc6h80vfb8po1cwr5vz0mv0jjm].[none:map_name:nk]'>
+            <groupfilter function='level-members' level='[none:map_name:nk]' user:ui-enumeration='all' user:ui-marker='enumerate' />
+          </filter>
+          <filter class='categorical' column='[federated.0bzc6h80vfb8po1cwr5vz0mv0jjm].[none:player_name:nk]'>
+            <groupfilter function='level-members' level='[none:player_name:nk]' user:ui-enumeration='all' user:ui-marker='enumerate' />
+          </filter>
+          <filter class='categorical' column='[federated.0bzc6h80vfb8po1cwr5vz0mv0jjm].[none:player_role:nk]'>
+            <groupfilter function='level-members' level='[none:player_role:nk]' user:ui-enumeration='all' user:ui-marker='enumerate' />
+          </filter>
+          <filter class='categorical' column='[federated.0bzc6h80vfb8po1cwr5vz0mv0jjm].[none:team_name:nk]'>
+            <groupfilter function='level-members' level='[none:team_name:nk]' user:ui-enumeration='all' user:ui-marker='enumerate' />
+          </filter>
+          <slices>
+            <column>[federated.0bzc6h80vfb8po1cwr5vz0mv0jjm].[none:date_year:qk]</column>
+            <column>[federated.0bzc6h80vfb8po1cwr5vz0mv0jjm].[none:map_name:nk]</column>
+            <column>[federated.0bzc6h80vfb8po1cwr5vz0mv0jjm].[none:player_name:nk]</column>
+            <column>[federated.0bzc6h80vfb8po1cwr5vz0mv0jjm].[none:player_role:nk]</column>
+            <column>[federated.0bzc6h80vfb8po1cwr5vz0mv0jjm].[none:team_name:nk]</column>
+          </slices>
           <aggregation value='true' />
         </view>
-        <style />
+        <style>
+          <style-rule element='axis'>
+            <format attr='title' class='0' field='[federated.0bzc6h80vfb8po1cwr5vz0mv0jjm].[sum:player_kd:qk]' scope='cols' value='player kill to death ratio' />
+            <format attr='title' class='0' field='[federated.0bzc6h80vfb8po1cwr5vz0mv0jjm].[avg:player_accuracy_percent:qk]' scope='rows' value='Avg. player accuracy percentage' />
+          </style-rule>
+          <style-rule element='mark'>
+            <encoding attr='color' field='[federated.0bzc6h80vfb8po1cwr5vz0mv0jjm].[sum:player_rating:qk]' palette='red_10_0' type='interpolated' />
+          </style-rule>
+        </style>
         <panes>
           <pane selection-relaxation-option='selection-relaxation-allow'>
             <view>
               <breakdown value='auto' />
             </view>
             <mark class='Automatic' />
+            <encodings>
+              <color column='[federated.0bzc6h80vfb8po1cwr5vz0mv0jjm].[sum:player_rating:qk]' />
+              <size column='[federated.0bzc6h80vfb8po1cwr5vz0mv0jjm].[sum:player_total_maps_played:qk]' />
+              <lod column='[federated.0bzc6h80vfb8po1cwr5vz0mv0jjm].[none:player_name:nk]' />
+              <lod column='[federated.0bzc6h80vfb8po1cwr5vz0mv0jjm].[none:team_name:nk]' />
+              <tooltip column='[federated.0bzc6h80vfb8po1cwr5vz0mv0jjm].[sum:player_accuracy_percent:qk]' />
+              <tooltip column='[federated.0bzc6h80vfb8po1cwr5vz0mv0jjm].[sum:player_kd:qk]' />
+              <lod column='[federated.0bzc6h80vfb8po1cwr5vz0mv0jjm].[none:player_role:nk]' />
+            </encodings>
+            <reference-line axis-column='[federated.0bzc6h80vfb8po1cwr5vz0mv0jjm].[avg:player_accuracy_percent:qk]' enable-instant-analytics='true' formula='average' id='refline1' label-type='automatic' probability='95' scope='per-pane' value-column='[federated.0bzc6h80vfb8po1cwr5vz0mv0jjm].[avg:player_accuracy_percent:qk]' z-order='2' />
           </pane>
         </panes>
-        <rows />
-        <cols />
+        <rows>[federated.0bzc6h80vfb8po1cwr5vz0mv0jjm].[avg:player_accuracy_percent:qk]</rows>
+        <cols>([federated.0bzc6h80vfb8po1cwr5vz0mv0jjm].[none:Calculation_37278944375898112:nk] * [federated.0bzc6h80vfb8po1cwr5vz0mv0jjm].[sum:player_kd:qk])</cols>
       </table>
       <simple-id uuid='{BBB442C2-1F41-4095-BD29-DBB999EB0789}' />
     </worksheet>
@@ -1972,8 +2110,8 @@
         <devicelayout auto-generated='true' name='Phone'>
           <size maxheight='700' minheight='700' sizing-mode='vscroll' />
           <zones>
-            <zone h='100000' id='118' type-v2='layout-basic' w='100000' x='0' y='0'>
-              <zone h='84000' id='117' param='vert' type-v2='layout-flow' w='84000' x='8000' y='8000'>
+            <zone h='100000' id='134' type-v2='layout-basic' w='100000' x='0' y='0'>
+              <zone h='84000' id='133' param='vert' type-v2='layout-flow' w='84000' x='8000' y='8000'>
                 <zone h='4294' id='10' type-v2='dashboard-object' w='7137' x='4917' y='91825'>
                   <button action='tabdoc:goto-sheet window-id=&quot;{B1C6BF0C-1268-4659-8C3B-B95C38EAC300}&quot;' button-type='text'>
                     <button-visual-state>
@@ -2079,8 +2217,8 @@
         <devicelayout auto-generated='true' name='Phone'>
           <size maxheight='700' minheight='700' sizing-mode='vscroll' />
           <zones>
-            <zone h='100000' id='143' type-v2='layout-basic' w='100000' x='0' y='0'>
-              <zone h='98518' id='142' param='vert' type-v2='layout-flow' w='99166' x='417' y='741'>
+            <zone h='100000' id='159' type-v2='layout-basic' w='100000' x='0' y='0'>
+              <zone h='84000' id='158' param='vert' type-v2='layout-flow' w='84000' x='8000' y='8000'>
                 <zone forceUpdate='true' h='7037' id='9' type-v2='text' w='20729' x='40833' y='741'>
                   <formatted-text>
                     <run bold='true' fontcolor='#e15759' fontname='Tableau Semibold' fontsize='15'>Counter Strike Esports Analytics</run>
@@ -2220,8 +2358,8 @@
         <devicelayout auto-generated='true' name='Phone'>
           <size maxheight='700' minheight='700' sizing-mode='vscroll' />
           <zones>
-            <zone h='100000' id='181' type-v2='layout-basic' w='100000' x='0' y='0'>
-              <zone h='98678' id='180' param='vert' type-v2='layout-flow' w='99304' x='348' y='661'>
+            <zone h='100000' id='197' type-v2='layout-basic' w='100000' x='0' y='0'>
+              <zone h='98678' id='196' param='vert' type-v2='layout-flow' w='99304' x='348' y='661'>
                 <zone h='4330' id='8' type-v2='dashboard-object' w='12175' x='3860' y='94421'>
                   <button action='tabdoc:goto-sheet window-id=&quot;{B1C6BF0C-1268-4659-8C3B-B95C38EAC300}&quot;' button-type='text'>
                     <button-visual-state>
@@ -2269,8 +2407,8 @@
         <devicelayout auto-generated='true' name='Phone'>
           <size maxheight='700' minheight='700' sizing-mode='vscroll' />
           <zones>
-            <zone h='100000' id='167' type-v2='layout-basic' w='100000' x='0' y='0'>
-              <zone h='84000' id='166' param='vert' type-v2='layout-flow' w='84000' x='8000' y='8000'>
+            <zone h='100000' id='183' type-v2='layout-basic' w='100000' x='0' y='0'>
+              <zone h='84000' id='182' param='vert' type-v2='layout-flow' w='84000' x='8000' y='8000'>
                 <zone h='4707' id='7' type-v2='dashboard-object' w='8059' x='9315' y='661'>
                   <button action='tabdoc:goto-sheet window-id=&quot;{B1C6BF0C-1268-4659-8C3B-B95C38EAC300}&quot;' button-type='text'>
                     <button-visual-state>
@@ -2318,8 +2456,8 @@
         <devicelayout auto-generated='true' name='Phone'>
           <size maxheight='700' minheight='700' sizing-mode='vscroll' />
           <zones>
-            <zone h='100000' id='116' type-v2='layout-basic' w='100000' x='0' y='0'>
-              <zone h='84000' id='115' param='vert' type-v2='layout-flow' w='84000' x='8000' y='8000'>
+            <zone h='100000' id='132' type-v2='layout-basic' w='100000' x='0' y='0'>
+              <zone h='84000' id='131' param='vert' type-v2='layout-flow' w='84000' x='8000' y='8000'>
                 <zone h='4330' id='9' type-v2='dashboard-object' w='11429' x='1603' y='93589'>
                   <button action='tabdoc:goto-sheet window-id=&quot;{B1C6BF0C-1268-4659-8C3B-B95C38EAC300}&quot;' button-type='text'>
                     <button-visual-state>
@@ -2356,8 +2494,8 @@
         <datasource name='Parameters' />
       </datasources>
       <datasource-dependencies datasource='Parameters'>
-        <column caption='Date Granularity' datatype='string' name='[Parameter 1]' param-domain-type='list' role='measure' type='nominal' value='&quot;Year&quot;'>
-          <calculation class='tableau' formula='&quot;Year&quot;' />
+        <column caption='Date Granularity' datatype='string' name='[Parameter 1]' param-domain-type='list' role='measure' type='nominal' value='&quot;Quarter&quot;'>
+          <calculation class='tableau' formula='&quot;Quarter&quot;' />
           <members>
             <member value='&quot;Month&quot;' />
             <member value='&quot;Quarter&quot;' />
@@ -2397,8 +2535,8 @@
         <devicelayout auto-generated='true' name='Phone'>
           <size maxheight='700' minheight='700' sizing-mode='vscroll' />
           <zones>
-            <zone h='100000' id='151' type-v2='layout-basic' w='100000' x='0' y='0'>
-              <zone h='84000' id='150' param='vert' type-v2='layout-flow' w='84000' x='8000' y='8000'>
+            <zone h='100000' id='167' type-v2='layout-basic' w='100000' x='0' y='0'>
+              <zone h='84000' id='166' param='vert' type-v2='layout-flow' w='84000' x='8000' y='8000'>
                 <zone custom-title='true' h='4625' id='131' mode='compact' param='[Parameters].[Parameter 1]' type-v2='paramctrl' w='6966' x='93034' y='0'>
                   <formatted-text>
                     <run>Show per:</run>
@@ -2441,8 +2579,8 @@
         <datasource name='Parameters' />
       </datasources>
       <datasource-dependencies datasource='Parameters'>
-        <column caption='Date Granularity' datatype='string' name='[Parameter 1]' param-domain-type='list' role='measure' type='nominal' value='&quot;Year&quot;'>
-          <calculation class='tableau' formula='&quot;Year&quot;' />
+        <column caption='Date Granularity' datatype='string' name='[Parameter 1]' param-domain-type='list' role='measure' type='nominal' value='&quot;Quarter&quot;'>
+          <calculation class='tableau' formula='&quot;Quarter&quot;' />
           <members>
             <member value='&quot;Month&quot;' />
             <member value='&quot;Quarter&quot;' />
@@ -2466,8 +2604,8 @@
         <devicelayout auto-generated='true' name='Phone'>
           <size maxheight='700' minheight='700' sizing-mode='vscroll' />
           <zones>
-            <zone h='100000' id='109' type-v2='layout-basic' w='100000' x='0' y='0'>
-              <zone h='84000' id='108' param='vert' type-v2='layout-flow' w='84000' x='8000' y='8000'>
+            <zone h='100000' id='125' type-v2='layout-basic' w='100000' x='0' y='0'>
+              <zone h='84000' id='124' param='vert' type-v2='layout-flow' w='84000' x='8000' y='8000'>
                 <zone h='7019' id='4' mode='compact' param='[Parameters].[Parameter 1]' type-v2='paramctrl' w='8094' x='91036' y='1899'>
                   <zone-style>
                     <format attr='border-color' value='#000000' />
@@ -2531,13 +2669,13 @@
       </cards>
       <simple-id uuid='{F369924C-8A86-4E2D-89E3-369BC1949FFA}' />
     </window>
-    <window class='dashboard' maximized='true' name='Home Dashboard'>
+    <window class='dashboard' name='Home Dashboard'>
       <viewpoints />
-      <active id='6' />
+      <active id='-1' />
       <device-preview selected='Desktop' visible='true' />
       <simple-id uuid='{B1C6BF0C-1268-4659-8C3B-B95C38EAC300}' />
     </window>
-    <window class='worksheet' name='Player aim stats'>
+    <window class='worksheet' maximized='true' name='Player aim stats'>
       <cards>
         <edge name='left'>
           <strip size='160'>
@@ -2557,7 +2695,32 @@
             <card type='title' />
           </strip>
         </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card mode='checkdropdown' param='[federated.0bzc6h80vfb8po1cwr5vz0mv0jjm].[none:team_name:nk]' type='filter' values='relevant' />
+            <card mode='checkdropdown' param='[federated.0bzc6h80vfb8po1cwr5vz0mv0jjm].[none:player_name:nk]' type='filter' values='relevant' />
+            <card param='[federated.0bzc6h80vfb8po1cwr5vz0mv0jjm].[none:player_role:nk]' type='filter' />
+            <card param='[federated.0bzc6h80vfb8po1cwr5vz0mv0jjm].[none:map_name:nk]' type='filter' />
+            <card param='[federated.0bzc6h80vfb8po1cwr5vz0mv0jjm].[none:date_year:qk]' show-domain='false' show-null-ctrls='false' type='filter' />
+            <card mode='compact' param='[Parameters].[Parameter 1]' type='parameter' />
+            <card pane-specification-id='0' param='[federated.0bzc6h80vfb8po1cwr5vz0mv0jjm].[sum:player_total_maps_played:qk]' type='size' />
+            <card pane-specification-id='0' param='[federated.0bzc6h80vfb8po1cwr5vz0mv0jjm].[sum:player_rating:qk]' type='color' />
+          </strip>
+        </edge>
       </cards>
+      <viewpoint>
+        <highlight>
+          <color-one-way>
+            <field>[Parameters].[Parameter 1]</field>
+            <field>[federated.0bzc6h80vfb8po1cwr5vz0mv0jjm].[none:Calculation_37278944375898112:nk]</field>
+            <field>[federated.0bzc6h80vfb8po1cwr5vz0mv0jjm].[none:date_year:qk]</field>
+            <field>[federated.0bzc6h80vfb8po1cwr5vz0mv0jjm].[none:map_name:nk]</field>
+            <field>[federated.0bzc6h80vfb8po1cwr5vz0mv0jjm].[none:player_name:nk]</field>
+            <field>[federated.0bzc6h80vfb8po1cwr5vz0mv0jjm].[none:player_role:nk]</field>
+            <field>[federated.0bzc6h80vfb8po1cwr5vz0mv0jjm].[none:team_name:nk]</field>
+          </color-one-way>
+        </highlight>
+      </viewpoint>
       <simple-id uuid='{C4A292FE-567D-4585-BA92-11A27DF48AC0}' />
     </window>
     <window class='dashboard' name='Player aim stats Dashboard'>
@@ -2720,17 +2883,263 @@
     </thumbnail>
     <thumbnail height='192' name='Player aim stats' width='192'>
       iVBORw0KGgoAAAANSUhEUgAAAMAAAADACAYAAABS3GwHAAAACXBIWXMAABJ0AAASdAHeZh94
-      AAACFUlEQVR4nO3TMQEAIAzAMMC/5yFjRxMFfXpnZg5Eve0A2GQA0gxAmgFIMwBpBiDNAKQZ
-      gDQDkGYA0gxAmgFIMwBpBiDNAKQZgDQDkGYA0gxAmgFIMwBpBiDNAKQZgDQDkGYA0gxAmgFI
-      MwBpBiDNAKQZgDQDkGYA0gxAmgFIMwBpBiDNAKQZgDQDkGYA0gxAmgFIMwBpBiDNAKQZgDQD
-      kGYA0gxAmgFIMwBpBiDNAKQZgDQDkGYA0gxAmgFIMwBpBiDNAKQZgDQDkGYA0gxAmgFIMwBp
-      BiDNAKQZgDQDkGYA0gxAmgFIMwBpBiDNAKQZgDQDkGYA0gxAmgFIMwBpBiDNAKQZgDQDkGYA
-      0gxAmgFIMwBpBiDNAKQZgDQDkGYA0gxAmgFIMwBpBiDNAKQZgDQDkGYA0gxAmgFIMwBpBiDN
-      AKQZgDQDkGYA0gxAmgFIMwBpBiDNAKQZgDQDkGYA0gxAmgFIMwBpBiDNAKQZgDQDkGYA0gxA
-      mgFIMwBpBiDNAKQZgDQDkGYA0gxAmgFIMwBpBiDNAKQZgDQDkGYA0gxAmgFIMwBpBiDNAKQZ
-      gDQDkGYA0gxAmgFIMwBpBiDNAKQZgDQDkGYA0gxAmgFIMwBpBiDNAKQZgDQDkGYA0gxAmgFI
-      MwBpBiDNAKQZgDQDkGYA0gxAmgFIMwBpBiDNAKQZgDQDkGYA0gxAmgFIMwBpBiDNAKR9Y+0F
-      fBUOM1sAAAAASUVORK5CYII=
+      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
     </thumbnail>
     <thumbnail height='192' name='Player aim stats Dashboard' width='192'>
       iVBORw0KGgoAAAANSUhEUgAAAMAAAADACAYAAABS3GwHAAAACXBIWXMAABJ0AAASdAHeZh94
