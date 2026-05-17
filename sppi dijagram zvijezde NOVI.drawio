@@ -1,0 +1,104 @@
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36">
+  <diagram name="Page-1" id="W664SyLqiGH7b9ch8UCu">
+    <mxGraphModel dx="2745" dy="1088" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="ef4ycoDS_LDvcyUO6jXl-2" parent="1" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" value="fact_match_performance" vertex="1">
+          <mxGeometry height="440" width="200" x="200" y="280" as="geometry" />
+        </mxCell>
+        <mxCell id="ef4ycoDS_LDvcyUO6jXl-4" parent="ef4ycoDS_LDvcyUO6jXl-2" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" value="&lt;p data-pm-slice=&quot;1 1 []&quot;&gt;record_id INT (PK)&lt;/p&gt;&lt;p&gt;player_id&amp;nbsp; INT (FK)&lt;/p&gt;&lt;p&gt;team_id&amp;nbsp; INT (FK)&lt;/p&gt;&lt;p&gt;opponent_team_id INT (FK)&lt;/p&gt;&lt;p&gt;map_id&amp;nbsp; INT (FK)&lt;/p&gt;&lt;p&gt;match_type_id&amp;nbsp; INT (FK)&lt;/p&gt;&lt;p&gt;date_id&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;&amp;nbsp; INT (FK)&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;&lt;br&gt;&lt;/span&gt;&lt;/p&gt;&lt;p&gt;match_total_kills&amp;nbsp; INT&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;match_total_&lt;/span&gt;assists&amp;nbsp; INT&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;match_total_&lt;/span&gt;deaths&amp;nbsp; INT&lt;/p&gt;&lt;p&gt;match_lenght INT&lt;/p&gt;&lt;p&gt;match_performance_score&amp;nbsp; FLOAT&lt;/p&gt;&lt;p&gt;match_wining_team VARCHAR&lt;/p&gt;&lt;p&gt;match_mvp_player&amp;nbsp; VARCHAR&lt;/p&gt;" vertex="1">
+          <mxGeometry height="410" width="200" y="30" as="geometry" />
+        </mxCell>
+        <mxCell id="ef4ycoDS_LDvcyUO6jXl-8" parent="1" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" value="dim_player" vertex="1">
+          <mxGeometry height="390" width="200" x="520" y="200" as="geometry" />
+        </mxCell>
+        <mxCell id="ef4ycoDS_LDvcyUO6jXl-9" parent="ef4ycoDS_LDvcyUO6jXl-8" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" value="&lt;p data-pm-slice=&quot;1 1 []&quot;&gt;player_id&amp;nbsp; INT (PK)&lt;/p&gt;&lt;p&gt;player_name&amp;nbsp; VARCHAR&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;player_&lt;/span&gt;country&amp;nbsp; VARCHAR&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;player_&lt;/span&gt;team&amp;nbsp;&amp;nbsp;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;VARCHAR&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;player_&lt;/span&gt;total_maps_played&amp;nbsp; INT&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;player_&lt;/span&gt;total_rounds_played&amp;nbsp; INT&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;player_&lt;/span&gt;kd&amp;nbsp; FLOAT&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;player_&lt;/span&gt;rating&amp;nbsp; FLOAT&lt;/p&gt;&lt;p&gt;player_mvp_rewards INT&lt;/p&gt;&lt;p&gt;player_accuracy_percent&amp;nbsp; FLOAT&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;player_&lt;/span&gt;reaction_time_ms&amp;nbsp; FLOAT&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;player_&lt;/span&gt;fatigue_index&amp;nbsp; FLOAT&lt;/p&gt;" vertex="1">
+          <mxGeometry height="360" width="200" y="30" as="geometry" />
+        </mxCell>
+        <mxCell id="ef4ycoDS_LDvcyUO6jXl-16" parent="1" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" value="dim_team" vertex="1">
+          <mxGeometry height="270" width="190" x="520" y="630" as="geometry" />
+        </mxCell>
+        <mxCell id="ef4ycoDS_LDvcyUO6jXl-17" parent="ef4ycoDS_LDvcyUO6jXl-16" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" value="&lt;p data-pm-slice=&quot;1 1 []&quot;&gt;team_id&amp;nbsp; INT (PK)&lt;/p&gt;&lt;p data-pm-slice=&quot;1 1 []&quot;&gt;team_is_active INT&amp;nbsp; (0/1)&lt;/p&gt;&lt;p&gt;team_name&amp;nbsp; VARCHAR&lt;/p&gt;&lt;p&gt;team_rating&amp;nbsp; FLOAT&lt;/p&gt;&lt;p&gt;team_total_matches_played&amp;nbsp; INT&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;team_total_kd&amp;nbsp; FLOAT&lt;/span&gt;&lt;/p&gt;&lt;p&gt;team_total_mvp_awards INT&lt;/p&gt;&lt;p&gt;team_win_probability&amp;nbsp; FLOAT&lt;/p&gt;&lt;p&gt;team_finals_won INT&lt;/p&gt;" vertex="1">
+          <mxGeometry height="240" width="190" y="30" as="geometry" />
+        </mxCell>
+        <mxCell id="ef4ycoDS_LDvcyUO6jXl-19" parent="1" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" value="dim_map" vertex="1">
+          <mxGeometry height="120" width="160" x="-80" y="320" as="geometry" />
+        </mxCell>
+        <mxCell id="ef4ycoDS_LDvcyUO6jXl-20" parent="ef4ycoDS_LDvcyUO6jXl-19" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" value="&lt;p data-pm-slice=&quot;1 1 []&quot;&gt;map_id&amp;nbsp; &amp;nbsp;INT (PK)&lt;/p&gt;&lt;p&gt;map_name&amp;nbsp; VARCHAR&lt;br&gt;&lt;br&gt;map_active_duty INT (0/1)&lt;/p&gt;" vertex="1">
+          <mxGeometry height="90" width="160" y="30" as="geometry" />
+        </mxCell>
+        <mxCell id="ef4ycoDS_LDvcyUO6jXl-21" parent="1" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" value="dim_match_type" vertex="1">
+          <mxGeometry height="160" width="160" x="-90" y="620" as="geometry" />
+        </mxCell>
+        <mxCell id="ef4ycoDS_LDvcyUO6jXl-22" parent="ef4ycoDS_LDvcyUO6jXl-21" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" value="&lt;p data-pm-slice=&quot;0 0 []&quot;&gt;match_type_id&amp;nbsp; &amp;nbsp;INT (PK)&lt;/p&gt;&lt;p data-pm-slice=&quot;0 0 []&quot;&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;match_type&amp;nbsp; VARCHAR&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;match_type_best_of&amp;nbsp; INT&lt;/span&gt;&lt;/p&gt;" vertex="1">
+          <mxGeometry height="130" width="160" y="30" as="geometry" />
+        </mxCell>
+        <mxCell id="ef4ycoDS_LDvcyUO6jXl-26" edge="1" parent="1" source="ef4ycoDS_LDvcyUO6jXl-9" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=0.999;entryY=0.277;entryDx=0;entryDy=0;entryPerimeter=0;" target="ef4ycoDS_LDvcyUO6jXl-4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ef4ycoDS_LDvcyUO6jXl-38" connectable="0" parent="ef4ycoDS_LDvcyUO6jXl-26" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="1:M" vertex="1">
+          <mxGeometry relative="1" x="0.0608" as="geometry">
+            <mxPoint y="-15" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ef4ycoDS_LDvcyUO6jXl-28" edge="1" parent="1" source="ef4ycoDS_LDvcyUO6jXl-22" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=-0.008;entryY=0.9;entryDx=0;entryDy=0;entryPerimeter=0;" target="ef4ycoDS_LDvcyUO6jXl-4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ef4ycoDS_LDvcyUO6jXl-35" connectable="0" parent="ef4ycoDS_LDvcyUO6jXl-28" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="1:M" vertex="1">
+          <mxGeometry relative="1" x="0.038" as="geometry">
+            <mxPoint y="-15" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ef4ycoDS_LDvcyUO6jXl-29" edge="1" parent="1" source="ef4ycoDS_LDvcyUO6jXl-20" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.143;exitDx=0;exitDy=0;entryX=-0.02;entryY=0.111;entryDx=0;entryDy=0;entryPerimeter=0;exitPerimeter=0;" target="ef4ycoDS_LDvcyUO6jXl-4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ef4ycoDS_LDvcyUO6jXl-37" connectable="0" parent="ef4ycoDS_LDvcyUO6jXl-29" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="1:M" vertex="1">
+          <mxGeometry relative="1" x="-0.117" y="-1" as="geometry">
+            <mxPoint x="9" y="-11" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ef4ycoDS_LDvcyUO6jXl-31" edge="1" parent="1" source="ef4ycoDS_LDvcyUO6jXl-17" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=-0.004;exitY=0.048;exitDx=0;exitDy=0;entryX=0.997;entryY=0.821;entryDx=0;entryDy=0;entryPerimeter=0;exitPerimeter=0;" target="ef4ycoDS_LDvcyUO6jXl-4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ef4ycoDS_LDvcyUO6jXl-36" connectable="0" parent="ef4ycoDS_LDvcyUO6jXl-31" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="1:M" vertex="1">
+          <mxGeometry relative="1" x="0.1877" y="2" as="geometry">
+            <mxPoint x="12" y="-11" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="w_X-wER-6I_PHtT18Cm1-3" connectable="0" parent="ef4ycoDS_LDvcyUO6jXl-31" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=12;" value="playing team" vertex="1">
+          <mxGeometry relative="1" x="-0.2065" y="-2" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="_AgUGUcjApKDb2hKp-ND-1" parent="1" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" value="dim_date" vertex="1">
+          <mxGeometry height="210" width="190" x="220" y="770" as="geometry" />
+        </mxCell>
+        <mxCell id="_AgUGUcjApKDb2hKp-ND-2" parent="_AgUGUcjApKDb2hKp-ND-1" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" value="&lt;p data-pm-slice=&quot;1 1 []&quot;&gt;date_id INT PK&lt;br&gt;&lt;/p&gt;&lt;p data-pm-slice=&quot;1 1 []&quot;&gt;date_full_date&amp;nbsp; DATE&lt;/p&gt;&lt;p data-pm-slice=&quot;1 1 []&quot;&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;date_&lt;/span&gt;year&amp;nbsp; INT&lt;/p&gt;&lt;p data-pm-slice=&quot;1 1 []&quot;&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;date_&lt;/span&gt;month&amp;nbsp; INT&lt;/p&gt;&lt;p data-pm-slice=&quot;1 1 []&quot;&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;date_&lt;/span&gt;quarter&amp;nbsp; INT&lt;/p&gt;&lt;p data-pm-slice=&quot;1 1 []&quot;&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;date_&lt;/span&gt;day_of_week&amp;nbsp; VARCHAR&lt;/p&gt;" vertex="1">
+          <mxGeometry height="180" width="190" y="30" as="geometry" />
+        </mxCell>
+        <mxCell id="_AgUGUcjApKDb2hKp-ND-3" edge="1" parent="1" source="_AgUGUcjApKDb2hKp-ND-1" style="edgeStyle=none;curved=1;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.503;entryY=0.994;entryDx=0;entryDy=0;entryPerimeter=0;fontSize=12;startSize=8;endSize=8;" target="ef4ycoDS_LDvcyUO6jXl-4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="hQAqMhLPh6n4Eq5ncTZL-1" connectable="0" parent="_AgUGUcjApKDb2hKp-ND-3" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=12;" value="1:M" vertex="1">
+          <mxGeometry relative="1" x="0.0593" y="4" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="w_X-wER-6I_PHtT18Cm1-1" edge="1" parent="1" source="ef4ycoDS_LDvcyUO6jXl-4" style="edgeStyle=none;curved=1;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0;entryDx=0;entryDy=0;fontSize=12;startSize=8;endSize=8;" target="ef4ycoDS_LDvcyUO6jXl-16">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="w_X-wER-6I_PHtT18Cm1-2" connectable="0" parent="w_X-wER-6I_PHtT18Cm1-1" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=12;" value="1:M" vertex="1">
+          <mxGeometry relative="1" x="-0.0087" y="-2" as="geometry">
+            <mxPoint y="-23" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="w_X-wER-6I_PHtT18Cm1-4" connectable="0" parent="w_X-wER-6I_PHtT18Cm1-1" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=12;" value="opponent team" vertex="1">
+          <mxGeometry relative="1" x="-0.1247" y="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
