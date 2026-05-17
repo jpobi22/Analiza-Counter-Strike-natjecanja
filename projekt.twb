@@ -2362,8 +2362,8 @@
         <devicelayout auto-generated='true' name='Phone'>
           <size maxheight='700' minheight='700' sizing-mode='vscroll' />
           <zones>
-            <zone h='100000' id='108' type-v2='layout-basic' w='100000' x='0' y='0'>
-              <zone h='98678' id='107' param='vert' type-v2='layout-flow' w='99304' x='348' y='661'>
+            <zone h='100000' id='110' type-v2='layout-basic' w='100000' x='0' y='0'>
+              <zone h='84000' id='109' param='vert' type-v2='layout-flow' w='84000' x='8000' y='8000'>
                 <zone h='5450' id='4' name='Heatmap' param='[federated.0bzyhoh1m3im9812yuz7b0z7jr3d].[none:active_duty:qk]' show-domain='false' show-null-ctrls='false' type-v2='filter' w='11140' x='45909' y='56069'>
                   <zone-style>
                     <format attr='border-color' value='#000000' />
@@ -2464,7 +2464,7 @@
             </button-visual-state>
           </button>
         </zone>
-        <zone h='4815' id='37' type-v2='dashboard-object' w='8542' x='42448' y='19722'>
+        <zone h='4815' id='37' type-v2='dashboard-object' w='8542' x='41719' y='19444'>
           <button action='tabdoc:goto-sheet window-id=&quot;{33C1BC5F-B11C-40DE-B090-1E11B1CA8AF3}&quot;' button-type='text'>
             <button-visual-state>
               <caption>Win rate</caption>
@@ -2496,12 +2496,28 @@
         <devicelayout auto-generated='true' name='Phone'>
           <size maxheight='700' minheight='700' sizing-mode='vscroll' />
           <zones>
-            <zone h='100000' id='133' type-v2='layout-basic' w='100000' x='0' y='0'>
-              <zone h='98518' id='132' param='vert' type-v2='layout-flow' w='99166' x='417' y='741'>
+            <zone h='100000' id='135' type-v2='layout-basic' w='100000' x='0' y='0'>
+              <zone h='98518' id='134' param='vert' type-v2='layout-flow' w='99166' x='417' y='741'>
                 <zone forceUpdate='true' h='7037' id='9' type-v2='text' w='20729' x='40833' y='741'>
                   <formatted-text>
                     <run bold='true' fontcolor='#e15759' fontname='Tableau Semibold' fontsize='15'>Counter Strike Esports Analytics</run>
                   </formatted-text>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone h='4815' id='37' type-v2='dashboard-object' w='8542' x='41719' y='19444'>
+                  <button action='tabdoc:goto-sheet window-id=&quot;{33C1BC5F-B11C-40DE-B090-1E11B1CA8AF3}&quot;' button-type='text'>
+                    <button-visual-state>
+                      <caption>Win rate</caption>
+                      <button-caption-font-style fontcolor='#ffffff' fontname='Tableau Bold' fontsize='12' />
+                      <format attr='background-color' value='#333333' />
+                    </button-visual-state>
+                  </button>
                   <zone-style>
                     <format attr='border-color' value='#000000' />
                     <format attr='border-style' value='none' />
@@ -2530,22 +2546,6 @@
                   <button action='tabdoc:goto-sheet window-id=&quot;{0E715638-92C9-4643-8FF9-F005A4B8BA23}&quot;' button-type='text'>
                     <button-visual-state>
                       <caption>Team rankings</caption>
-                      <button-caption-font-style fontcolor='#ffffff' fontname='Tableau Bold' fontsize='12' />
-                      <format attr='background-color' value='#333333' />
-                    </button-visual-state>
-                  </button>
-                  <zone-style>
-                    <format attr='border-color' value='#000000' />
-                    <format attr='border-style' value='none' />
-                    <format attr='border-width' value='0' />
-                    <format attr='margin' value='4' />
-                    <format attr='padding' value='0' />
-                  </zone-style>
-                </zone>
-                <zone h='4815' id='37' type-v2='dashboard-object' w='8542' x='42448' y='19722'>
-                  <button action='tabdoc:goto-sheet window-id=&quot;{33C1BC5F-B11C-40DE-B090-1E11B1CA8AF3}&quot;' button-type='text'>
-                    <button-visual-state>
-                      <caption>Win rate</caption>
                       <button-caption-font-style fontcolor='#ffffff' fontname='Tableau Bold' fontsize='12' />
                       <format attr='background-color' value='#333333' />
                     </button-visual-state>
@@ -2716,8 +2716,8 @@
         <devicelayout auto-generated='true' name='Phone'>
           <size maxheight='750' minheight='750' sizing-mode='vscroll' />
           <zones>
-            <zone h='100000' id='171' type-v2='layout-basic' w='100000' x='0' y='0'>
-              <zone h='84000' id='170' param='vert' type-v2='layout-flow' w='84000' x='8000' y='8000'>
+            <zone h='100000' id='173' type-v2='layout-basic' w='100000' x='0' y='0'>
+              <zone h='84000' id='172' param='vert' type-v2='layout-flow' w='84000' x='8000' y='8000'>
                 <zone h='6078' id='142' name='Player aim stats' param='[federated.0bzyhoh1m3im9812yuz7b0z7jr3d].[none:date_year:qk]' show-domain='false' show-null-ctrls='false' type-v2='filter' w='15764' x='84236' y='0'>
                   <zone-style>
                     <format attr='border-color' value='#000000' />
@@ -2822,8 +2822,8 @@
         <devicelayout auto-generated='true' name='Phone'>
           <size maxheight='700' minheight='700' sizing-mode='vscroll' />
           <zones>
-            <zone h='100000' id='157' type-v2='layout-basic' w='100000' x='0' y='0'>
-              <zone h='98678' id='156' param='vert' type-v2='layout-flow' w='99298' x='351' y='661'>
+            <zone h='100000' id='159' type-v2='layout-basic' w='100000' x='0' y='0'>
+              <zone h='84000' id='158' param='vert' type-v2='layout-flow' w='84000' x='8000' y='8000'>
                 <zone h='4707' id='7' type-v2='dashboard-object' w='8059' x='9315' y='661'>
                   <button action='tabdoc:goto-sheet window-id=&quot;{B1C6BF0C-1268-4659-8C3B-B95C38EAC300}&quot;' button-type='text'>
                     <button-visual-state>
@@ -2910,8 +2910,8 @@
         <devicelayout auto-generated='true' name='Phone'>
           <size maxheight='700' minheight='700' sizing-mode='vscroll' />
           <zones>
-            <zone h='100000' id='106' type-v2='layout-basic' w='100000' x='0' y='0'>
-              <zone h='98678' id='105' param='vert' type-v2='layout-flow' w='99304' x='348' y='661'>
+            <zone h='100000' id='108' type-v2='layout-basic' w='100000' x='0' y='0'>
+              <zone h='84000' id='107' param='vert' type-v2='layout-flow' w='84000' x='8000' y='8000'>
                 <zone h='5038' id='99' mode='checkdropdown' name='Score Geography' param='[federated.0bzyhoh1m3im9812yuz7b0z7jr3d].[none:player_country:nk]' type-v2='filter' w='13757' x='86243' y='0'>
                   <zone-style>
                     <format attr='border-color' value='#000000' />
@@ -3051,8 +3051,8 @@
         <devicelayout auto-generated='true' name='Phone'>
           <size maxheight='700' minheight='700' sizing-mode='vscroll' />
           <zones>
-            <zone h='100000' id='141' type-v2='layout-basic' w='100000' x='0' y='0'>
-              <zone h='98678' id='140' param='vert' type-v2='layout-flow' w='99304' x='348' y='661'>
+            <zone h='100000' id='143' type-v2='layout-basic' w='100000' x='0' y='0'>
+              <zone h='84000' id='142' param='vert' type-v2='layout-flow' w='84000' x='8000' y='8000'>
                 <zone h='6028' id='129' name='Team rankings' param='[federated.0bzyhoh1m3im9812yuz7b0z7jr3d].[none:date_year:qk]' show-domain='false' show-null-ctrls='false' type-v2='filter' w='6966' x='93034' y='4625'>
                   <zone-style>
                     <format attr='border-color' value='#000000' />
@@ -3157,8 +3157,8 @@
         <devicelayout auto-generated='true' name='Phone'>
           <size maxheight='700' minheight='700' sizing-mode='vscroll' />
           <zones>
-            <zone h='100000' id='99' type-v2='layout-basic' w='100000' x='0' y='0'>
-              <zone h='98678' id='98' param='vert' type-v2='layout-flow' w='99304' x='348' y='661'>
+            <zone h='100000' id='101' type-v2='layout-basic' w='100000' x='0' y='0'>
+              <zone h='84000' id='100' param='vert' type-v2='layout-flow' w='84000' x='8000' y='8000'>
                 <zone fixed-size='280' h='91908' id='3' is-fixed='true' name='Win rate' w='89774' x='827' y='1486'>
                   <zone-style>
                     <format attr='border-color' value='#000000' />
@@ -3400,7 +3400,7 @@
       <viewpoints>
         <viewpoint name='Team rankings' />
       </viewpoints>
-      <active id='123' />
+      <active id='-1' />
       <simple-id uuid='{0E715638-92C9-4643-8FF9-F005A4B8BA23}' />
     </window>
     <window class='worksheet' name='Score Geography'>
@@ -3447,7 +3447,7 @@
           <zoom type='entire-view' />
         </viewpoint>
       </viewpoints>
-      <active id='94' />
+      <active id='-1' />
       <simple-id uuid='{FDA5C394-CAB6-4F40-A134-B172BA88CD3B}' />
     </window>
     <window class='worksheet' name='Heatmap'>
